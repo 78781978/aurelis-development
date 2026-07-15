@@ -1,19 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 170" role="img" aria-labelledby="markTitle">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 260" role="img" aria-labelledby="markTitle">
   <title id="markTitle">Aurelis Development — znak</title>
   <defs>
-    <linearGradient id="greenGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#4FD1A0"/>
-      <stop offset="100%" stop-color="#0E6B4C"/>
-    </linearGradient>
-    <linearGradient id="navyGrad2" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#2A4054"/>
+    <linearGradient id="markGradMini" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#3FBE8A"/>
+      <stop offset="55%" stop-color="#1E9C6B"/>
       <stop offset="100%" stop-color="#16222C"/>
     </linearGradient>
   </defs>
-  <polygon points="10,140 70,55 70,140" fill="url(#greenGrad2)"/>
-  <polygon points="70,140 70,35 110,75 110,140" fill="url(#greenGrad2)"/>
-  <rect x="110" y="50" width="38" height="90" fill="url(#navyGrad2)"/>
-  <rect x="154" y="72" width="32" height="68" fill="url(#navyGrad2)"/>
-  <rect x="192" y="94" width="24" height="46" fill="url(#navyGrad2)"/>
-  <polygon points="10,145 216,145 130,158 10,148" fill="#16222C"/>
+  <polygon points="150,18 262,230 38,230" fill="url(#markGradMini)"/>
+  <rect x="112" y="180" width="20" height="50" fill="#16222C"/>
+  <rect x="140" y="150" width="20" height="80" fill="#16222C"/>
+  <rect x="168" y="168" width="20" height="62" fill="#16222C"/>
 </svg>
