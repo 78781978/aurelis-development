@@ -136,7 +136,7 @@ p{ margin: 0 0 16px; color: var(--gray); }
   padding-bottom: 12px;
 }
 .logo{ flex-shrink:0; }
-.logo img{ height: 64px; width:auto; display:block; }
+.logo img{ height: 192px; width:auto; display:block; }
 
 .nav-toggle{
   display:none;
@@ -447,7 +447,15 @@ form.contact-form{ display:grid; gap:18px; }
 .footer-grid h4{ color: var(--white); font-size: 1rem; margin-bottom:18px; }
 .footer-grid ul li{ margin-bottom: 10px; }
 .footer-grid ul li a:hover{ color: var(--accent-light); }
-.footer-logo img{ height: 56px; margin-bottom: 16px; filter: brightness(0) invert(1); }
+.footer-logo{
+  display:inline-block;
+  background: var(--white);
+  padding: 14px 22px;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  line-height: 0;
+}
+.footer-logo img{ height: 60px; display:block; }
 .footer-bottom{
   padding: 22px 0;
   display:flex;
@@ -476,7 +484,7 @@ form.contact-form{ display:grid; gap:18px; }
   .header-phone{ display:none; }
   .main-nav ul{ gap: 22px; }
   .main-nav a{ font-size: 0.8rem; }
-  .logo img{ height: 54px; }
+  .logo img{ height: 150px; }
   .header-cta .btn{ padding: 12px 18px; font-size: 0.8rem; }
 }
 
