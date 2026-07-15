@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="bg4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2A4054"/>
+      <stop offset="100%" stop-color="#16222C"/>
+    </linearGradient>
+    <pattern id="stripes4" width="60" height="60" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
+      <rect width="30" height="60" fill="rgba(30,156,107,0.07)"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg4)"/>
+  <rect width="800" height="600" fill="url(#stripes4)"/>
+  <rect x="0" y="0" width="800" height="600" fill="none" stroke="#1E9C6B" stroke-width="3" stroke-opacity="0.35"/>
+  <g transform="translate(400,255)" fill="none" stroke="#4FD1A0" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" opacity="0.85">
+    <path d="M-60,40 L-60,-10 L0,-50 L60,-10 L60,40" />
+    <line x1="-80" y1="40" x2="80" y2="40" />
+    <line x1="-30" y1="40" x2="-30" y2="0" />
+    <line x1="30" y1="40" x2="30" y2="0" />
+  </g>
+  <text x="400" y="345" text-anchor="middle" font-family="'Montserrat','Poppins',Arial,sans-serif" font-size="26" letter-spacing="2" fill="#4FD1A0" font-weight="600">REALIZACJA 04</text>
+  <text x="400" y="378" text-anchor="middle" font-family="'Poppins',Arial,sans-serif" font-size="16" letter-spacing="1" fill="#C9CBCF">Budowa domu — Skawina</text>
+</svg>
