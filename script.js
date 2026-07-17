@@ -46,4 +46,67 @@ document.addEventListener('DOMContentLoaded', function () {
       form.reset();
     });
   }
+
+  // Scroll-reveal animations
+  var revealEls = document.querySelectorAll('.reveal');
+  if (revealEls.length) {
+    if ('IntersectionObserver' in window) {
+      var revealObserver = new IntersectionObserver(function (entries, obs) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+      revealEls.forEach(function (el) { revealObserver.observe(el); });
+    } else {
+      revealEls.forEach(function (el) { el.classList.add('is-visible'); });
+    }
+  }
+
+  // Animated count-up for stat numbers (data-count="120+")
+  var counters = document.querySelectorAll('[data-count]');
+  if (counters.length && 'IntersectionObserver' in window) {
+    var counterObserver = new IntersectionObserver(function (entries, obs) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        var el = entry.target;
+        var raw = el.getAttribute('data-count');
+        var match = raw.match(/^(\d+)(.*)$/);
+        if (!match) { el.textContent = raw; obs.unobserve(el); return; }
+        var target = parseInt(match[1], 10);
+        var suffix = match[2] || '';
+        var duration = 1200;
+        var start = null;
+        function step(ts) {
+          if (start === null) start = ts;
+          var progress = Math.min((ts - start) / duration, 1);
+          var eased = 1 - Math.pow(1 - progress, 3);
+          el.textContent = Math.round(eased * target) + suffix;
+          if (progress < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+        obs.unobserve(el);
+      });
+    }, { threshold: 0.4 });
+    counters.forEach(function (el) { counterObserver.observe(el); });
+  }
+
+  // Cookie consent banner
+  var cookieBanner = document.getElementById('cookieBanner');
+  if (cookieBanner) {
+    var consent = localStorage.getItem('aurelisCookieConsent');
+    if (!consent) {
+      setTimeout(function () { cookieBanner.classList.add('is-visible'); }, 400);
+    }
+    var acceptBtn = document.getElementById('cookieAcceptBtn');
+    var rejectBtn = document.getElementById('cookieRejectBtn');
+    function hideCookieBanner(value) {
+      localStorage.setItem('aurelisCookieConsent', value);
+      cookieBanner.classList.remove('is-visible');
+    }
+    if (acceptBtn) acceptBtn.addEventListener('click', function () { hideCookieBanner('all'); });
+    if (rejectBtn) rejectBtn.addEventListener('click', function () { hideCookieBanner('necessary'); });
+  }
 });
