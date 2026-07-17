@@ -20,8 +20,9 @@ script.js               — Menu mobilne, scroll-reveal, licznik statystyk, bane
 logo.svg                 — Logo (pełna wersja, odtworzone na podstawie przesłanej grafiki)
 logo-mark.svg            — Sam znak graficzny (używany jako favicon)
 hero-bg.svg               — Placeholder zdjęcia w sekcji hero
-about-bg.svg              — Placeholder zdjęcia w sekcji "O nas" (o-nas.html)
+about-bg.svg              — Placeholder zdjęcia (używany tylko przy 3 kartach zespołu na o-nas.html)
 zespol.png                — Prawdziwe zdjęcie użyte jako "zdjęcie zespołu" na stronie głównej
+budowa.png                — Prawdziwe zdjęcie placu budowy użyte w sekcji "Nasza historia" na o-nas.html
 realizacja-01.svg … realizacja-06.svg  — Placeholdery zdjęć realizacji (6 szt.)
 robots.txt                — Konfiguracja dla robotów wyszukiwarek
 sitemap.xml                — Mapa strony (SEO)
