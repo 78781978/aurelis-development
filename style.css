@@ -287,16 +287,17 @@ p{ margin: 0 0 16px; color: var(--gray); }
   pointer-events:none;
 }
 .hero .container{ position:relative; z-index:2; }
-.hero-content{ max-width: 640px; }
+.hero-content{ max-width: 700px; }
 .hero-content h1{ color: var(--white); }
 .hero-content p.lead{ color: var(--gray-light); font-size: 1.1rem; }
 .hero-actions{ display:flex; gap:16px; flex-wrap:wrap; margin-top: 12px; }
 
 .hero-badges{
   display:flex;
-  gap: 40px;
+  gap: 26px;
   margin-top: 56px;
   flex-wrap:wrap;
+  row-gap: 28px;
 }
 .hero-badges div strong{
   display:block;
@@ -588,24 +589,25 @@ form.contact-form{ display:grid; gap:18px; }
   border-bottom: 1px solid rgba(255,255,255,0.1);
   text-align: center;
 }
-.footer-grid h4{ color: var(--white); font-size: 1rem; margin-bottom:18px; }
-.footer-grid ul li{ margin-bottom: 10px; }
+.footer-grid h4{ color: var(--white); font-size: 1.1rem; margin-bottom:20px; }
+.footer-grid p{ font-size: 0.98rem; line-height: 1.7; }
+.footer-grid ul li{ margin-bottom: 12px; font-size: 0.98rem; }
 .footer-grid ul li a:hover{ color: var(--accent-light); }
 .footer-logo{
   display:inline-block;
   background: var(--white);
-  padding: 14px 22px;
-  border-radius: 10px;
-  margin: 0 auto 16px;
+  padding: 18px 28px;
+  border-radius: 12px;
+  margin: 0 auto 20px;
   line-height: 0;
 }
-.footer-logo img{ height: 60px; display:block; }
+.footer-logo img{ height: 92px; display:block; }
 .footer-bottom{
   padding: 22px 0;
   display:flex;
   justify-content:center;
   align-items:center;
-  font-size: 0.82rem;
+  font-size: 0.9rem;
   flex-wrap:wrap;
   gap: 16px;
   text-align:center;
@@ -676,5 +678,5 @@ form.contact-form{ display:grid; gap:18px; }
 
 @media (max-width: 480px){
   .logo img{ height: 64px; }
-  .footer-logo img{ height: 48px; }
+  .footer-logo img{ height: 68px; }
 }

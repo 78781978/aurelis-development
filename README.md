@@ -20,7 +20,8 @@ script.js               — Menu mobilne, scroll-reveal, licznik statystyk, bane
 logo.svg                 — Logo (pełna wersja, odtworzone na podstawie przesłanej grafiki)
 logo-mark.svg            — Sam znak graficzny (używany jako favicon)
 hero-bg.svg               — Placeholder zdjęcia w sekcji hero
-about-bg.svg              — Placeholder zdjęcia w sekcji "O nas"
+about-bg.svg              — Placeholder zdjęcia w sekcji "O nas" (o-nas.html)
+zespol.png                — Prawdziwe zdjęcie użyte jako "zdjęcie zespołu" na stronie głównej
 realizacja-01.svg … realizacja-06.svg  — Placeholdery zdjęć realizacji (6 szt.)
 robots.txt                — Konfiguracja dla robotów wyszukiwarek
 sitemap.xml                — Mapa strony (SEO)
@@ -39,9 +40,13 @@ Zaktualizowano na dane rzeczywiste przekazane przez klienta:
 
 - **Numer telefonu** — nikt go jeszcze nie podał, więc w nagłówku, stopce, `kontakt.html` i `praca.html` widnieje jawnie oznaczony placeholder `+48 000 000 000`. Podmień we wszystkich plikach `.html` (wyszukaj `000 000 000`) na docelowy numer.
 - **NIP** — brak danych, oznaczone jako "do uzupełnienia" na `kontakt.html`.
-- Wszystkie zdjęcia (hero, "o nas", 6 realizacji) — to grafiki-placeholdery z podpisem, do podmiany na prawdziwe fotografie.
+- Zdjęcie hero oraz 6 zdjęć realizacji — to nadal grafiki-placeholdery z podpisem, do podmiany na prawdziwe fotografie. Zdjęcie zespołu na stronie głównej (`zespol.png`) zostało już podmienione na przesłaną przez klienta fotografię.
 - Opinie klientów na stronie "Realizacje" — przykładowe, do zamiany na prawdziwe.
 - Statystyki (120+ projektów, 12 lat, 35 osób w zespole, 98% poleceń) — orientacyjne, do zaktualizowania realnymi danymi.
+
+## Pinezka na mapie (kontakt.html)
+
+Środowisko, w którym pracuję, nie ma dostępu do usług geokodowania (np. Nominatim/Google) — nie mogłem więc automatycznie zweryfikować dokładnych współrzędnych GPS dla „ul. Warszawska 53". Mapa jest teraz mocno przybliżona (zoom) do centrum miejscowości Michałowice, ale pinezka **nie jest zweryfikowana co do konkretnego numeru budynku**. Zalecam samodzielnie sprawdzić adres w Google Maps i, jeśli pinezka jest przesunięta, podać mi dokładne współrzędne (lat, lon) albo bezpośredni link do lokalizacji — podmienię `bbox` i `marker` w `kontakt.html`.
 
 ## Strona "Praca"
 
