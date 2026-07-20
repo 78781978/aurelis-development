@@ -35,12 +35,13 @@ Zaktualizowano na dane rzeczywiste przekazane przez klienta:
 - **Aurelis Development Sp. z o.o.**
 - Adres: **ul. Warszawska 53, 32-091 Michałowice** — uwaga: klient podał adres jako "Ul. Warszawka 53"; przyjęto, że to literówka i chodzi o ul. **Warszawską** (bardzo częstą nazwę ulicy w polskich miejscowościach) — warto to jeszcze zweryfikować przed publikacją.
 - E-mail: **biuro@aurelis.com.pl**
+- Telefon: **+48 512 133 322** (komórkowy) oraz **+48 12 373 99 89** (stacjonarny) — widnieją w nagłówku, stopce, `kontakt.html` i przycisku CTA na `praca.html`.
+- NIP: **675-154-51-05** — podany na `kontakt.html` oraz w `polityka-prywatnosci.html`.
 - Teren działalności: **Małopolska** (poprzednio było zawężone do "Kraków i okolice" — treść na stronie została odpowiednio poszerzona)
 
 ## Dane, które NADAL są PRZYKŁADOWE — do podmiany
 
-- **Numer telefonu** — nikt go jeszcze nie podał, więc w nagłówku, stopce, `kontakt.html` i `praca.html` widnieje jawnie oznaczony placeholder `+48 000 000 000`. Podmień we wszystkich plikach `.html` (wyszukaj `000 000 000`) na docelowy numer.
-- **NIP** — brak danych, oznaczone jako "do uzupełnienia" na `kontakt.html`.
+- **KRS i REGON** — spółka nie przekazała jeszcze tych danych; `polityka-prywatnosci.html` jawnie to zaznacza.
 - Zdjęcie hero oraz 6 zdjęć realizacji — to nadal grafiki-placeholdery z podpisem, do podmiany na prawdziwe fotografie. Zdjęcie zespołu na stronie głównej (`zespol.png`) zostało już podmienione na przesłaną przez klienta fotografię.
 - Opinie klientów na stronie "Realizacje" — przykładowe, do zamiany na prawdziwe.
 - Statystyki (120+ projektów, 12 lat, 35 osób w zespole, 98% poleceń) — orientacyjne, do zaktualizowania realnymi danymi.
