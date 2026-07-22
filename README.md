@@ -94,3 +94,57 @@ W sekcji kontaktowej użyto darmowej mapy OpenStreetMap (bez klucza API), wyśro
 6. Po 1–2 minutach strona będzie dostępna pod adresem `https://<twoja-nazwa-uzytkownika>.github.io/aurelis-development/`.
 
 Docelowo można też podpiąć własną domenę (np. `aurelisdevelopment.pl`) w tych samych ustawieniach Pages.
+
+## Wersja WordPress (motyw `wp-theme/aurelis-development`)
+
+Ta sama strona jest dostępna też jako **pełny, samodzielny motyw WordPress** — folder `wp-theme/aurelis-development/`. To nie jest statyczny "przepisany na PHP" HTML, tylko prawdziwy motyw z panelem administracyjnym: dane firmy, realizacje, opinie klientów i teksty na stronie głównej można edytować z poziomu `wp-admin`, bez dotykania kodu. Motyw nie wymaga żadnych dodatkowych wtyczek (formularz kontaktowy, karuzele itd. działają natywnie).
+
+### Instalacja
+
+1. Spakuj **zawartość** folderu `wp-theme/aurelis-development/` do pliku `.zip` (tak, by po rozpakowaniu plik `style.css` znalazł się bezpośrednio w folderze motywu, a nie o poziom głębiej).
+2. W `wp-admin` → **Wygląd → Motywy → Dodaj nowy → Wyślij motyw** → wskaż ten `.zip` → **Zainstaluj**, a następnie **Włącz**.
+   (Alternatywnie: wgraj folder `aurelis-development` bezpośrednio przez FTP/SFTP do `wp-content/themes/`.)
+
+### Konieczna konfiguracja po instalacji
+
+Po włączeniu motywu strona nie będzie jeszcze wyglądać poprawnie, dopóki nie wykonasz poniższych kroków — WordPress musi wiedzieć, które Strony odpowiadają którym szablonom:
+
+1. **Utwórz Strony** (Strony → Dodaj nową) z **dokładnie takimi adresami (slug)**, jak niżej — motyw dobiera szablon automatycznie po slugu:
+   - `o-nas`
+   - `uslugi`
+   - `realizacje`
+   - `praca`
+   - `kontakt`
+   - `polityka-prywatnosci`
+   - `regulamin`
+   
+   Tytuł i treść każdej Strony możesz wypełnić dowolnie (treść części z nich i tak jest w dużej mierze generowana przez szablon — patrz sekcja "Co jest edytowalne" niżej), ale **slug musi się zgadzać**, inaczej WordPress użyje domyślnego, generycznego `page.php`.
+2. **Ustaw stronę główną**: Ustawienia → Czytanie → "Strona główna wyświetla" → **Statyczna strona** → jako "Strona główna" wybierz dowolną utworzoną Stronę (może być pusta/nowa "Strona główna") — to aktywuje `front-page.php` wraz z jego polami hero w edytorze.
+3. **Skonfiguruj menu**: Wygląd → Menu → utwórz menu z linkami do powyższych Stron i przypisz je do lokalizacji **"Menu główne"**. Jeśli menu nie zostanie przypisane, motyw pokaże domyślne menu awaryjne (te same pozycje, na sztywno).
+4. **Uzupełnij dane firmy**: Wygląd → Personalizacja (Customizer) → sekcja **"Dane firmy Aurelis"** → telefony, e-mail, NIP, nazwa spółki, link do mapy (embed OSM/Google), statystyki na stronie głównej (liczba projektów, lat, osób w zespole, % poleceń) oraz tekst "O firmie" w stopce.
+5. **Dodaj realizacje**: w menu bocznym pojawi się nowy typ treści **Realizacje** — każdy wpis to tytuł + zdjęcie wyróżniające (miniatura) + opis. Widoczne na stronie `realizacje`.
+6. **Dodaj opinie klientów**: analogicznie typ treści **Opinie klientów** — tytuł (imię/nazwa klienta) + treść (sama treść opinii, bez cudzysłowów — motyw dodaje je automatycznie). Też widoczne na stronie `realizacje`.
+7. Formularz kontaktowy na stronie `kontakt` wysyła e-mail przez wbudowaną funkcję WordPressa (`wp_mail`) na adres e-mail ustawiony w kroku 4 — działa od razu, o ile serwer hostingowy ma poprawnie skonfigurowaną wysyłkę poczty (część hostingów wymaga wtyczki SMTP, np. WP Mail SMTP, żeby maile nie trafiały do spamu — to standardowa praktyka przy każdym motywie WP, nie specyfika tego).
+
+### Co jest edytowalne z panelu, a co nie
+
+**Edytowalne bez dotykania kodu:**
+- Dane kontaktowe firmy, statystyki, link do mapy, tekst stopki (Customizer).
+- Realizacje i opinie klientów (osobne typy treści, dowolna liczba wpisów).
+- Nagłówek (hero) strony głównej — eyebrow, dwie linie nagłówka, lead (pole meta w edytorze Strony głównej).
+- Podtytuł pod nagłówkiem na każdej podstronie (pole meta w edytorze każdej Strony).
+- Stawka i lokalizacja oferty pracy na stronie `praca` (pola meta w edytorze tej Strony).
+- Główna treść tekstowa podstron (edytor Strony — tam, gdzie szablon korzysta z `the_content()`).
+
+**Wymaga edycji kodu szablonu (świadomie zostawione jako "twarde" elementy układu, żeby uniknąć rozjechania layoutu bez wtyczek typu ACF):**
+- Siatka 6 kart usług na stronie głównej i pełna lista usług na `uslugi`.
+- Struktura list/checklisty (np. wymagania i benefity na `praca`, zakres regulaminu).
+- Układ i liczba kolumn/sekcji na poszczególnych stronach.
+
+### Ograniczenia testowania w tym środowisku
+
+Ten motyw był tworzony i weryfikowany w piaskownicy bez dostępu do internetu na zewnątrz (m.in. `wordpress.org` jest zablokowane), więc **nie było możliwe zainstalowanie prawdziwego WordPressa i przetestowanie motywu "na żywo"**. Zamiast tego zweryfikowano go dwoma metodami:
+- `php -l` (lint składni) na każdym pliku `.php` motywu — zero błędów składniowych.
+- Własny, uproszczony zestaw funkcji-atrap WordPressa (nie prawdziwy rdzeń WP), który uruchamia rzeczywisty kod motywu i wyłapuje błędy krytyczne / brakujące funkcje — wszystkie szablony oraz logika Customizera, typów treści, pól meta i formularza kontaktowego przeszły ten test bez błędów.
+
+To **nie zastępuje** testu na prawdziwej instalacji WordPress. Zalecane jest zainstalowanie motywu na testowym WordPressie (lokalnie, np. przez LocalWP, albo na hostingu) przed publikacją produkcyjną, żeby zweryfikować wygląd i działanie formularza "na żywo".
