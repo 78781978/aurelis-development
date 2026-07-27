@@ -35,7 +35,7 @@ while ( have_posts() ) :
         <?php if ( get_the_content() ) : ?>
           <?php the_content(); ?>
         <?php else : ?>
-          <p>Firma Aurelis Development powstała z pasji do budownictwa i chęci robienia rzeczy solidnie. Zaczynaliśmy jako mały zespół realizujący remonty mieszkań w Krakowie — dziś zajmujemy się kompleksowymi realizacjami domów jednorodzinnych, osiedli, hal przemysłowych i dużych remontów na terenie całej Małopolski.</p>
+          <p>Firma Aurelis Development powstała z pasji do budownictwa i chęci robienia rzeczy solidnie. Zaczynaliśmy jako mały zespół realizujący remonty mieszkań w Krakowie - dziś zajmujemy się kompleksowymi realizacjami domów jednorodzinnych, osiedli, hal przemysłowych i dużych remontów na terenie całej Małopolski.</p>
           <p>Każdy projekt traktujemy indywidualnie — niezależnie od tego, czy to niewielki remont łazienki, czy budowa osiedla od podstaw. Stawiamy na przejrzystą komunikację, dotrzymywanie terminów i uczciwe rozliczenia.</p>
         <?php endif; ?>
         <a href="<?php echo esc_url( aurelis_page_url( 'kontakt' ) ); ?>" class="btn btn--dark">Porozmawiajmy o Twoim projekcie</a>
@@ -86,23 +86,23 @@ while ( have_posts() ) :
     <div class="section-head reveal">
       <span class="eyebrow">Zespół</span>
       <h2>Ludzie, którzy budują Aurelis Development</h2>
-      <p>Zdjęcia i sylwetki członków zespołu — miejsce do uzupełnienia.</p>
+      <p>Zdjęcia członków zespołu - miejsce do uzupełnienia.</p>
     </div>
     <div class="grid grid--3">
       <div class="card reveal" style="text-align:center;">
         <img src="<?php echo esc_url( AURELIS_URI . '/assets/about-bg.svg' ); ?>" alt="Placeholder zdjęcia" style="border-radius:50%; width:120px; height:120px; object-fit:cover; margin:0 auto 18px;">
-        <h3>Imię Nazwisko</h3>
-        <p>Prezes / Właściciel</p>
+        <h3>Przemysław Pieprzyk</h3>
+        <p>Prezes</p>
       </div>
       <div class="card reveal reveal-delay-1" style="text-align:center;">
         <img src="<?php echo esc_url( AURELIS_URI . '/assets/about-bg.svg' ); ?>" alt="Placeholder zdjęcia" style="border-radius:50%; width:120px; height:120px; object-fit:cover; margin:0 auto 18px;">
-        <h3>Imię Nazwisko</h3>
+        <h3>Łukasz Pytlic</h3>
         <p>Kierownik budowy</p>
       </div>
       <div class="card reveal reveal-delay-2" style="text-align:center;">
         <img src="<?php echo esc_url( AURELIS_URI . '/assets/about-bg.svg' ); ?>" alt="Placeholder zdjęcia" style="border-radius:50%; width:120px; height:120px; object-fit:cover; margin:0 auto 18px;">
-        <h3>Imię Nazwisko</h3>
-        <p>Architekt / Projektant</p>
+        <h3>Barbara Krzyworzeka</h3>
+        <p>Architekt</p>
       </div>
     </div>
   </div>

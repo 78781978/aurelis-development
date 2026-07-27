@@ -98,7 +98,7 @@ while ( have_posts() ) :
           ?>
           <div class="card reveal reveal-delay-<?php echo esc_attr( ( $j % 3 ) + 1 ); ?>">
             <p>„<?php echo esc_html( wp_strip_all_tags( get_the_content() ) ); ?>"</p>
-            <h3 style="margin-top:20px;">— <?php the_title(); ?></h3>
+            <h3 style="margin-top:20px;">- <?php the_title(); ?></h3>
           </div>
         <?php endwhile; ?>
         <?php wp_reset_postdata(); ?>
@@ -106,7 +106,7 @@ while ( have_posts() ) :
         <?php foreach ( $demo_opinie as $i => $opinia ) : ?>
           <div class="card reveal reveal-delay-<?php echo esc_attr( ( $i % 3 ) + 1 ); ?>">
             <p><?php echo esc_html( $opinia[0] ); ?></p>
-            <h3 style="margin-top:20px;">— <?php echo esc_html( $opinia[1] ); ?></h3>
+            <h3 style="margin-top:20px;">- <?php echo esc_html( $opinia[1] ); ?></h3>
           </div>
         <?php endforeach; ?>
         <p class="form-note" style="grid-column:1/-1;">Powyższe opinie są przykładowe. Dodaj prawdziwe recenzje w panelu: <strong>Opinie klientów → Dodaj opinię</strong> (tytuł = autor i miejscowość, treść = cytat).</p>
