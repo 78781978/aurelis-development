@@ -86,15 +86,15 @@ while ( have_posts() ) :
           </div>
           <div>
             <label for="name">Imię i nazwisko</label>
-            <input type="text" id="name" name="name" required placeholder="Jan Kowalski">
+            <input type="text" id="name" name="name" autocomplete="name" required placeholder="Jan Kowalski">
           </div>
           <div>
             <label for="phone">Telefon</label>
-            <input type="tel" id="phone" name="phone" placeholder="+48 000 000 000">
+            <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="+48 000 000 000">
           </div>
           <div>
             <label for="email">E-mail</label>
-            <input type="email" id="email" name="email" required placeholder="jan.kowalski@email.pl">
+            <input type="email" id="email" name="email" autocomplete="email" required placeholder="jan.kowalski@email.pl">
           </div>
           <div>
             <label for="service">Rodzaj usługi</label>

@@ -30,7 +30,6 @@ add_action( 'after_setup_theme', 'aurelis_setup' );
  * Style i skrypty.
  */
 function aurelis_assets() {
-	wp_enqueue_style( 'aurelis-google-fonts', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap', array(), null );
 	wp_enqueue_style( 'aurelis-style', get_stylesheet_uri(), array(), AURELIS_VERSION );
 	wp_enqueue_script( 'aurelis-script', AURELIS_URI . '/assets/script.js', array(), AURELIS_VERSION, true );
 }
@@ -61,6 +60,17 @@ function aurelis_meta_description() {
 	}
 }
 add_action( 'wp_head', 'aurelis_meta_description', 1 );
+
+/**
+ * Wyklucza Regulamin i Politykę prywatności z indeksowania (jak w wersji statycznej) —
+ * to treści prawne, nie mają wartości jako wyniki wyszukiwania.
+ */
+function aurelis_noindex_legal_pages() {
+	if ( is_page( 'regulamin' ) || is_page( 'polityka-prywatnosci' ) ) {
+		echo '<meta name="robots" content="noindex, follow">' . "\n";
+	}
+}
+add_action( 'wp_head', 'aurelis_noindex_legal_pages', 1 );
 
 /**
  * Fallback menu, gdyby nikt jeszcze nie utworzył menu w Wygląd → Menu.

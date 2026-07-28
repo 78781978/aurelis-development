@@ -7,11 +7,10 @@
 <meta name="description" content="Skontaktuj się z Aurelis Development Sp. z o.o. - generalnym wykonawcą inwestycji mieszkaniowych działającym na terenie Małopolski. Telefon, e-mail, adres oraz formularz kontaktowy.">
 <meta name="keywords" content="kontakt firma budowlana Kraków, bezpłatna wycena budowy domu, generalny wykonawca Małopolska kontakt">
 <link rel="icon" type="image/svg+xml" href="logo-mark.svg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<a class="skip-link" href="#main-content">Przejdź do treści</a>
 
 <header class="site-header">
   <div class="container">
@@ -29,10 +28,12 @@
     <div class="header-cta">
       <div class="header-phone">Zadzwoń: <span>+48 512 133 322</span></div>
       <a href="kontakt.html" class="btn btn--dark">Bezpłatna wycena</a>
-      <button class="nav-toggle" aria-label="Otwórz menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <button class="nav-toggle" aria-label="Otwórz menu" aria-controls="mainNav" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
+
+<main id="main-content">
 
 <section class="page-hero">
   <div class="container">
@@ -69,12 +70,6 @@
             <div class="ic">Firma</div>
             <div><strong>Aurelis Development Sp. z o.o.</strong><span>NIP: 675-154-51-05</span></div>
           </div>
-
-          <div class="social-links">
-            <a href="#" aria-label="Facebook">FB</a>
-            <a href="#" aria-label="Instagram">IG</a>
-            <a href="#" aria-label="LinkedIn">IN</a>
-          </div>
         </div>
 
         <div class="map-wrap">
@@ -96,15 +91,15 @@
         <form class="contact-form" action="#" method="post">
           <div>
             <label for="name">Imię i nazwisko</label>
-            <input type="text" id="name" name="name" required placeholder="Jan Kowalski">
+            <input type="text" id="name" name="name" autocomplete="name" required placeholder="Jan Kowalski">
           </div>
           <div>
             <label for="phone">Telefon</label>
-            <input type="tel" id="phone" name="phone" placeholder="+48 000 000 000">
+            <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="+48 000 000 000">
           </div>
           <div>
             <label for="email">E-mail</label>
-            <input type="email" id="email" name="email" required placeholder="jan.kowalski@email.pl">
+            <input type="email" id="email" name="email" autocomplete="email" required placeholder="jan.kowalski@email.pl">
           </div>
           <div>
             <label for="service">Rodzaj usługi</label>
@@ -129,17 +124,14 @@
   </div>
 </section>
 
+</main>
+
 <footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
       <div>
         <div class="footer-logo"><img src="logo.svg" alt="Aurelis Development"></div>
         <p>Aurelis Development Sp. z o.o. - generalne wykonawstwo inwestycji mieszkaniowych i przemysłowych na terenie całej Małopolski.</p>
-        <div class="social-links">
-          <a href="#" aria-label="Facebook">FB</a>
-          <a href="#" aria-label="Instagram">IG</a>
-          <a href="#" aria-label="LinkedIn">IN</a>
-        </div>
       </div>
       <div>
         <h4>Nawigacja</h4>

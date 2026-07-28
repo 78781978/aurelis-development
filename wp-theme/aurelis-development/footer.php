@@ -1,3 +1,5 @@
+</main>
+
 <footer class="site-footer" id="footer">
   <div class="container">
     <div class="footer-grid">

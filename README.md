@@ -26,6 +26,7 @@ budowa.png                — Prawdziwe zdjęcie placu budowy użyte w sekcji "N
 realizacja-01.svg … realizacja-06.svg  — Placeholdery zdjęć realizacji (6 szt.)
 robots.txt                — Konfiguracja dla robotów wyszukiwarek
 sitemap.xml                — Mapa strony (SEO)
+montserrat-*.woff2, poppins-*.woff2 — Czcionki Google hostowane lokalnie (patrz sekcja "Audyt SEO/WCAG/RODO" niżej)
 ```
 
 ## Dane firmowe
@@ -148,3 +149,22 @@ Ten motyw był tworzony i weryfikowany w piaskownicy bez dostępu do internetu n
 - Własny, uproszczony zestaw funkcji-atrap WordPressa (nie prawdziwy rdzeń WP), który uruchamia rzeczywisty kod motywu i wyłapuje błędy krytyczne / brakujące funkcje — wszystkie szablony oraz logika Customizera, typów treści, pól meta i formularza kontaktowego przeszły ten test bez błędów.
 
 To **nie zastępuje** testu na prawdziwej instalacji WordPress. Zalecane jest zainstalowanie motywu na testowym WordPressie (lokalnie, np. przez LocalWP, albo na hostingu) przed publikacją produkcyjną, żeby zweryfikować wygląd i działanie formularza "na żywo".
+
+## Audyt SEO / WCAG 2.2 / RODO i cookies (lipiec 2026)
+
+Przed wgraniem na WordPress przeprowadzono audyt całej strony (wersji statycznej i motywu). Wprowadzone poprawki, obecne teraz w obu wersjach:
+
+- **Czcionki Google hostowane lokalnie** (pliki `montserrat-*.woff2`, `poppins-*.woff2`) zamiast ładowania z `fonts.googleapis.com` przy każdym wejściu na stronę — usuwa to przekazywanie adresu IP odwiedzającego do Google przed wyrażeniem zgody na cookies (realny problem zgodności z RODO, typowy dla stron korzystających z Google Fonts przez CDN).
+- **Link "Przejdź do treści"** (skip link) oraz **landmark `<main>`** na każdej podstronie — WCAG 2.4.1 (Bypass Blocks).
+- **Poprawiony kontrast kolorystyczny** nadtytułów sekcji ("eyebrow"), aktywnego linku w menu i numeru telefonu w nagłówku — wcześniej zielony tekst na białym tle miał kontrast ok. 3,5:1, teraz (ciemniejszy odcień zieleni) ok. 6,5:1, zgodnie z WCAG 1.4.3 (min. 4,5:1 dla tekstu tej wielkości).
+- **Widoczny fokus klawiatury** na polach formularza kontaktowego (wcześniej tylko subtelna zmiana koloru obramowania).
+- **`autocomplete="name/tel/email"`** na polach formularza kontaktowego — WCAG 1.3.5.
+- **`aria-controls`** na przycisku menu mobilnego, powiązujący go z rozwijanym menu.
+- **Usunięto nieprowadzące nigdzie ikony social media** (`href="#"`) z wersji statycznej — w motywie WordPress i tak pokazują się dopiero po uzupełnieniu prawdziwych adresów w Personalizacji.
+- **`noindex` na Regulaminie i Polityce prywatności** dodane też do motywu WordPress (wcześniej było tylko w wersji statycznej).
+
+**Zostało do zrobienia (wymaga Twoich danych/decyzji):**
+- Uzupełnić **KRS i REGON** w Polityce prywatności i Regulaminie (obecnie oznaczone jako "do uzupełnienia") — dla Sp. z o.o. numer KRS jest obowiązkowy.
+- Dodać **prawdziwe linki do social media** (Facebook/Instagram/LinkedIn) w Personalizacji WordPress, jeśli firma je prowadzi — w przeciwnym razie ikony pozostaną ukryte.
+- Rozważyć dodanie **danych strukturalnych JSON-LD** (schema.org `GeneralContractor`) oraz **znaczników Open Graph** — nieobecne obecnie, a mają realny wpływ na widoczność w lokalnych wynikach Google i wygląd linków udostępnianych w social media. To wymaga wtyczki SEO (Yoast/Rank Math) lub dodatkowego kodu w motywie.
+- Po podpięciu docelowej domeny wygenerować nowy `robots.txt`/`sitemap.xml` pod WordPress (najprościej przez wtyczkę SEO) — obecne pliki są dla wersji statycznej i wskazują na stare adresy `.html`.

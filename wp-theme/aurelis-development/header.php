@@ -3,11 +3,11 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="preconnect" href="https://fonts.googleapis.com">
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
+<a class="skip-link" href="#main-content">Przejdź do treści</a>
 
 <header class="site-header">
   <div class="container">
@@ -34,7 +34,9 @@
     <div class="header-cta">
       <div class="header-phone">Zadzwoń: <span><?php echo esc_html( aurelis_company( 'phone_mobile' ) ); ?></span></div>
       <a href="<?php echo esc_url( aurelis_page_url( 'kontakt' ) ); ?>" class="btn btn--dark">Bezpłatna wycena</a>
-      <button class="nav-toggle" aria-label="Otwórz menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <button class="nav-toggle" aria-label="Otwórz menu" aria-controls="mainNav" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
+
+<main id="main-content">
