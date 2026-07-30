@@ -87,17 +87,17 @@ while ( have_posts() ) :
     </div>
     <div class="grid grid--3">
       <div class="card reveal" style="text-align:center;">
-        <img src="<?php echo esc_url( aurelis_company( 'team_member_1_photo' ) ? aurelis_company( 'team_member_1_photo' ) : AURELIS_URI . '/assets/about-bg.svg' ); ?>" alt="Przemysław Pieprzyk" style="border-radius:50%; width:120px; height:120px; object-fit:cover; margin:0 auto 18px;">
+        <img src="<?php echo esc_url( aurelis_company( 'team_member_1_photo' ) ? aurelis_company( 'team_member_1_photo' ) : AURELIS_URI . '/assets/icon-prezes.svg' ); ?>" alt="<?php echo aurelis_company( 'team_member_1_photo' ) ? esc_attr( 'Przemysław Pieprzyk' ) : ''; ?>" style="border-radius:50%; width:120px; height:120px; object-fit:cover; margin:0 auto 18px;">
         <h3>Przemysław Pieprzyk</h3>
         <p>Prezes</p>
       </div>
       <div class="card reveal reveal-delay-1" style="text-align:center;">
-        <img src="<?php echo esc_url( aurelis_company( 'team_member_2_photo' ) ? aurelis_company( 'team_member_2_photo' ) : AURELIS_URI . '/assets/about-bg.svg' ); ?>" alt="Łukasz Pytlic" style="border-radius:50%; width:120px; height:120px; object-fit:cover; margin:0 auto 18px;">
+        <img src="<?php echo esc_url( aurelis_company( 'team_member_2_photo' ) ? aurelis_company( 'team_member_2_photo' ) : AURELIS_URI . '/assets/icon-kierownik-budowy.svg' ); ?>" alt="<?php echo aurelis_company( 'team_member_2_photo' ) ? esc_attr( 'Łukasz Pytlic' ) : ''; ?>" style="border-radius:50%; width:120px; height:120px; object-fit:cover; margin:0 auto 18px;">
         <h3>Łukasz Pytlic</h3>
         <p>Kierownik budowy</p>
       </div>
       <div class="card reveal reveal-delay-2" style="text-align:center;">
-        <img src="<?php echo esc_url( aurelis_company( 'team_member_3_photo' ) ? aurelis_company( 'team_member_3_photo' ) : AURELIS_URI . '/assets/about-bg.svg' ); ?>" alt="Barbara Krzyworzeka" style="border-radius:50%; width:120px; height:120px; object-fit:cover; margin:0 auto 18px;">
+        <img src="<?php echo esc_url( aurelis_company( 'team_member_3_photo' ) ? aurelis_company( 'team_member_3_photo' ) : AURELIS_URI . '/assets/icon-architekt.svg' ); ?>" alt="<?php echo aurelis_company( 'team_member_3_photo' ) ? esc_attr( 'Barbara Krzyworzeka' ) : ''; ?>" style="border-radius:50%; width:120px; height:120px; object-fit:cover; margin:0 auto 18px;">
         <h3>Barbara Krzyworzeka</h3>
         <p>Architekt</p>
       </div>
