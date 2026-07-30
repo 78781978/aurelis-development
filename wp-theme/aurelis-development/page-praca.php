@@ -24,40 +24,6 @@ while ( have_posts() ) :
 
 <section class="section">
   <div class="container">
-    <div class="section-head reveal">
-      <span class="eyebrow">Czym się zajmujemy</span>
-      <h2>Generalne wykonawstwo inwestycji mieszkaniowych</h2>
-      <?php if ( get_the_content() ) : ?>
-        <?php the_content(); ?>
-      <?php else : ?>
-        <p>Aurelis Development Sp. z o.o. realizuje kompleksowe inwestycje budowlane na terenie Małopolski — to na tych projektach będziesz pracować.</p>
-      <?php endif; ?>
-    </div>
-    <div class="grid grid--3">
-      <div class="card reveal">
-        <div class="icon">01</div>
-        <h3>Budowa osiedli i budynków wielorodzinnych</h3>
-        <p>Osiedla domów jednorodzinnych oraz budynki wielorodzinne — pełen zakres prac konstrukcyjnych.</p>
-      </div>
-      <div class="card reveal reveal-delay-1">
-        <div class="icon">02</div>
-        <h3>Hale przemysłowe i roboty żelbetowe</h3>
-        <p>Hale przemysłowe i magazynowe oraz kompleksowe roboty żelbetowe i murarskie.</p>
-      </div>
-      <div class="card reveal reveal-delay-2">
-        <div class="icon">03</div>
-        <h3>Elewacje, dachy i wykończenia</h3>
-        <p>Ocieplenia elewacji w systemach ETICS, konstrukcje dachowe oraz prace wykończeniowe pod klucz.</p>
-      </div>
-    </div>
-    <div style="text-align:center;margin-top:44px;">
-      <a href="<?php echo esc_url( aurelis_page_url( 'uslugi' ) ); ?>" class="btn btn--dark">Zobacz pełen zakres usług</a>
-    </div>
-  </div>
-</section>
-
-<section class="section section--cream">
-  <div class="container">
     <div class="job-card reveal">
       <span class="eyebrow">Oferta pracy</span>
       <h2>Pracownik budowlany</h2>
@@ -92,6 +58,40 @@ while ( have_posts() ) :
         <a href="tel:<?php echo esc_attr( preg_replace( '/[^0-9+]/', '', aurelis_company( 'phone_mobile' ) ) ); ?>" class="btn btn--accent">Zadzwoń: <?php echo esc_html( aurelis_company( 'phone_mobile' ) ); ?></a>
         <a href="mailto:<?php echo esc_attr( aurelis_company( 'email' ) ); ?>?subject=<?php echo rawurlencode( 'CV — Pracownik budowlany' ); ?>&amp;body=<?php echo rawurlencode( "Dzień dobry,\r\n\r\nW załączeniu przesyłam moje CV na stanowisko pracownika budowlanego.\r\n\r\nPozdrawiam" ); ?>" class="btn btn--outline">Wyślij CV mailem</a>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--cream">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Czym się zajmujemy</span>
+      <h2>Generalne wykonawstwo inwestycji mieszkaniowych</h2>
+      <?php if ( get_the_content() ) : ?>
+        <?php the_content(); ?>
+      <?php else : ?>
+        <p>Aurelis Development Sp. z o.o. realizuje kompleksowe inwestycje budowlane na terenie Małopolski — to na tych projektach będziesz pracować.</p>
+      <?php endif; ?>
+    </div>
+    <div class="grid grid--3">
+      <div class="card reveal">
+        <div class="icon">01</div>
+        <h3>Budowa osiedli i budynków wielorodzinnych</h3>
+        <p>Osiedla domów jednorodzinnych oraz budynki wielorodzinne — pełen zakres prac konstrukcyjnych.</p>
+      </div>
+      <div class="card reveal reveal-delay-1">
+        <div class="icon">02</div>
+        <h3>Hale przemysłowe i roboty żelbetowe</h3>
+        <p>Hale przemysłowe i magazynowe oraz kompleksowe roboty żelbetowe i murarskie.</p>
+      </div>
+      <div class="card reveal reveal-delay-2">
+        <div class="icon">03</div>
+        <h3>Elewacje, dachy i wykończenia</h3>
+        <p>Ocieplenia elewacji w systemach ETICS, konstrukcje dachowe oraz prace wykończeniowe pod klucz.</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:44px;">
+      <a href="<?php echo esc_url( aurelis_page_url( 'uslugi' ) ); ?>" class="btn btn--dark">Zobacz pełen zakres usług</a>
     </div>
   </div>
 </section>
