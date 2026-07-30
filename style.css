@@ -719,20 +719,21 @@ form.contact-form{ display:grid; gap:18px; }
     var(--accent-light) 50%,
     var(--white) 58%, var(--white) 100%
   );
+  background-repeat: no-repeat;
   background-size: 260% 100%;
   background-position: 200% 0;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
-  animation: footer-credit-shine 8s ease-in-out infinite;
+  animation: footer-credit-shine 4s linear infinite;
 }
 @supports not ((-webkit-background-clip: text) or (background-clip: text)){
   .footer-credit-link .shine-text{ color: var(--white); }
 }
 @keyframes footer-credit-shine{
-  0%, 10%{ background-position: 200% 0; }
-  70%, 100%{ background-position: -60% 0; }
+  0%{ background-position: 0% 0; }
+  100%{ background-position: 100% 0; }
 }
 @media (prefers-reduced-motion: reduce){
   .footer-credit-link .shine-text{ animation:none; background-position: 0 0; }
