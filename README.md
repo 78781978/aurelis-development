@@ -48,7 +48,7 @@ Zaktualizowano na dane rzeczywiste przekazane przez klienta:
 
 ## Pinezka na mapie (kontakt.html)
 
-Środowisko, w którym pracuję, nie ma dostępu do usług geokodowania (np. Nominatim/Google) — nie mogłem więc automatycznie zweryfikować dokładnych współrzędnych GPS dla „ul. Warszawska 53". Mapa jest teraz mocno przybliżona (zoom) do centrum miejscowości Michałowice, ale pinezka **nie jest zweryfikowana co do konkretnego numeru budynku**. Zalecam samodzielnie sprawdzić adres w Google Maps i, jeśli pinezka jest przesunięta, podać mi dokładne współrzędne (lat, lon) albo bezpośredni link do lokalizacji — podmienię `bbox` i `marker` w `kontakt.html`.
+Współrzędne (50.171302, 19.967697) zostały podane bezpośrednio i wpisane do `bbox`/`marker` mapy w `kontakt.html` oraz jako domyślna wartość w Personalizacji WordPress (Customizer → "Dane firmy Aurelis" → "Adres URL mapy"). Wcześniejsza wersja używała przybliżonych, niezweryfikowanych współrzędnych centrum Michałowic — to zostało poprawione.
 
 ## Strona "Praca"
 
@@ -82,7 +82,7 @@ Formularz na stronie `kontakt.html` jest **demonstracyjny** — obecnie tylko po
 
 ## Mapa
 
-W sekcji kontaktowej użyto darmowej mapy OpenStreetMap (bez klucza API), wyśrodkowanej na Michałowicach (gmina w powiecie krakowskim). Po weryfikacji dokładnego adresu siedziby warto doprecyzować współrzędne w `kontakt.html` (`bbox` i `marker`).
+W sekcji kontaktowej użyto darmowej mapy OpenStreetMap (bez klucza API), wycentrowanej na zweryfikowanych współrzędnych siedziby firmy.
 
 ## Publikacja (GitHub Pages) — od zera
 

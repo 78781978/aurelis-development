@@ -28,7 +28,7 @@ function aurelis_customize_register( $wp_customize ) {
 		'aurelis_company_name'   => array( 'label' => 'Pełna nazwa spółki', 'default' => 'Aurelis Development Sp. z o.o.' ),
 		'aurelis_map_embed_url'  => array(
 			'label'   => 'Adres URL mapy (OpenStreetMap embed)',
-			'default' => 'https://www.openstreetmap.org/export/embed.html?bbox=19.7492%2C50.0989%2C19.7792%2C50.1149&layer=mapnik&marker=50.1069%2C19.7642',
+			'default' => 'https://www.openstreetmap.org/export/embed.html?bbox=19.9527%2C50.1633%2C19.9827%2C50.1793&layer=mapnik&marker=50.1713%2C19.9677',
 		),
 		'aurelis_social_facebook'  => array( 'label' => 'Facebook — adres URL', 'default' => 'https://www.facebook.com/profile.php?id=61591508803163' ),
 		'aurelis_stat_projects'  => array( 'label' => 'Statystyka: liczba projektów', 'default' => '120+' ),
@@ -115,7 +115,7 @@ function aurelis_company( $key ) {
 		'krs'            => '0000618799',
 		'regon'          => '364479265',
 		'company_name'   => 'Aurelis Development Sp. z o.o.',
-		'map_embed_url'  => 'https://www.openstreetmap.org/export/embed.html?bbox=19.7492%2C50.0989%2C19.7792%2C50.1149&layer=mapnik&marker=50.1069%2C19.7642',
+		'map_embed_url'  => 'https://www.openstreetmap.org/export/embed.html?bbox=19.9527%2C50.1633%2C19.9827%2C50.1793&layer=mapnik&marker=50.1713%2C19.9677',
 		'social_facebook'  => 'https://www.facebook.com/profile.php?id=61591508803163',
 		'stat_projects'  => '120+',
 		'stat_years'     => '10',
