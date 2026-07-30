@@ -456,6 +456,11 @@ p{ margin: 0 0 16px; color: var(--gray); }
 }
 .card:hover .icon{ transform: rotate(-8deg) scale(1.06); }
 
+/* Karty opinii: nazwisko wyrównane do dołu niezależnie od długości cytatu */
+.card--testimonial{ display:flex; flex-direction:column; }
+.card--testimonial p{ margin-bottom:0; }
+.card--testimonial h3{ margin-top:auto; padding-top:20px; }
+
 /* ===== Praca / job posting ===== */
 .job-card{
   background: var(--dark);
@@ -518,7 +523,8 @@ p{ margin: 0 0 16px; color: var(--gray); }
   color: var(--white);
   padding: 56px 0;
 }
-.stat-strip .grid--4{ text-align:center; }
+.stat-strip .grid--4, .stat-strip .grid--2{ text-align:center; }
+.stat-strip-grid{ max-width:520px; margin:0 auto; }
 .stat-strip strong{
   display:block;
   font-family: var(--font-heading);
@@ -714,6 +720,38 @@ form.contact-form{ display:grid; gap:18px; }
   transition: all var(--transition);
 }
 .social-links a:hover{ background: var(--accent); border-color: var(--accent); color: var(--dark); }
+
+/* ===== Stopka: kredyt "Projekt i wykonanie" z animacją przepływającego światła ===== */
+.footer-credit{
+  text-align:center;
+  padding: 6px 0 28px;
+  font-size: 0.82rem;
+}
+.footer-credit a{
+  position:relative;
+  display:inline-block;
+  overflow:hidden;
+  color: var(--gray-light);
+  text-decoration:none;
+  letter-spacing: 0.5px;
+}
+.footer-credit a::before{
+  content:"";
+  position:absolute;
+  top:0; left:-60%;
+  width:40%; height:100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.55), transparent);
+  transform: skewX(-20deg);
+  animation: footer-credit-shine 3.5s ease-in-out infinite;
+}
+@keyframes footer-credit-shine{
+  0%, 15%{ left:-60%; }
+  55%, 100%{ left:140%; }
+}
+.footer-credit a:hover{ color: var(--accent-light); }
+@media (prefers-reduced-motion: reduce){
+  .footer-credit a::before{ animation:none; }
+}
 
 /* ===== Responsive ===== */
 @media (max-width: 1360px){

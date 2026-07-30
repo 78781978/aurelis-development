@@ -51,8 +51,6 @@ while ( have_posts() ) :
 
           <div class="social-links">
             <?php if ( aurelis_company( 'social_facebook' ) ) : ?><a href="<?php echo esc_url( aurelis_company( 'social_facebook' ) ); ?>" aria-label="Facebook" target="_blank" rel="noopener">FB</a><?php endif; ?>
-            <?php if ( aurelis_company( 'social_instagram' ) ) : ?><a href="<?php echo esc_url( aurelis_company( 'social_instagram' ) ); ?>" aria-label="Instagram" target="_blank" rel="noopener">IG</a><?php endif; ?>
-            <?php if ( aurelis_company( 'social_linkedin' ) ) : ?><a href="<?php echo esc_url( aurelis_company( 'social_linkedin' ) ); ?>" aria-label="LinkedIn" target="_blank" rel="noopener">IN</a><?php endif; ?>
           </div>
         </div>
 

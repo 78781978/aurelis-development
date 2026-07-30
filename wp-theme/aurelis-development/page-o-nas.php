@@ -8,7 +8,7 @@ get_header();
 
 while ( have_posts() ) :
 	the_post();
-	$subtitle = aurelis_hero_subtitle( get_the_ID(), 'Aurelis Development Sp. z o.o. to zespół inżynierów, kierowników budów i wykonawców, którzy od 12 lat budują i remontują na terenie całej Małopolski.' );
+	$subtitle = aurelis_hero_subtitle( get_the_ID(), 'Aurelis Development Sp. z o.o. to zespół inżynierów, kierowników budów i wykonawców, którzy od 10 lat budują i remontują na terenie całej Małopolski.' );
 	?>
 
 <section class="page-hero">
@@ -72,11 +72,9 @@ while ( have_posts() ) :
 
 <section class="stat-strip">
   <div class="container">
-    <div class="grid grid--4">
+    <div class="grid grid--2 stat-strip-grid">
       <div><strong data-count="<?php echo esc_attr( aurelis_company( 'stat_projects' ) ); ?>"><?php echo esc_html( aurelis_company( 'stat_projects' ) ); ?></strong><span>Projektów</span></div>
       <div><strong data-count="<?php echo esc_attr( aurelis_company( 'stat_years' ) ); ?>"><?php echo esc_html( aurelis_company( 'stat_years' ) ); ?></strong><span>Lat na rynku</span></div>
-      <div><strong data-count="<?php echo esc_attr( aurelis_company( 'stat_team' ) ); ?>"><?php echo esc_html( aurelis_company( 'stat_team' ) ); ?></strong><span>Osób w zespole</span></div>
-      <div><strong data-count="<?php echo esc_attr( aurelis_company( 'stat_recommend' ) ); ?>"><?php echo esc_html( aurelis_company( 'stat_recommend' ) ); ?></strong><span>Poleceń klientów</span></div>
     </div>
   </div>
 </section>
@@ -86,21 +84,20 @@ while ( have_posts() ) :
     <div class="section-head reveal">
       <span class="eyebrow">Zespół</span>
       <h2>Ludzie, którzy budują Aurelis Development</h2>
-      <p>Zdjęcia członków zespołu - miejsce do uzupełnienia.</p>
     </div>
     <div class="grid grid--3">
       <div class="card reveal" style="text-align:center;">
-        <img src="<?php echo esc_url( AURELIS_URI . '/assets/about-bg.svg' ); ?>" alt="Placeholder zdjęcia" style="border-radius:50%; width:120px; height:120px; object-fit:cover; margin:0 auto 18px;">
+        <img src="<?php echo esc_url( aurelis_company( 'team_member_1_photo' ) ? aurelis_company( 'team_member_1_photo' ) : AURELIS_URI . '/assets/about-bg.svg' ); ?>" alt="Przemysław Pieprzyk" style="border-radius:50%; width:120px; height:120px; object-fit:cover; margin:0 auto 18px;">
         <h3>Przemysław Pieprzyk</h3>
         <p>Prezes</p>
       </div>
       <div class="card reveal reveal-delay-1" style="text-align:center;">
-        <img src="<?php echo esc_url( AURELIS_URI . '/assets/about-bg.svg' ); ?>" alt="Placeholder zdjęcia" style="border-radius:50%; width:120px; height:120px; object-fit:cover; margin:0 auto 18px;">
+        <img src="<?php echo esc_url( aurelis_company( 'team_member_2_photo' ) ? aurelis_company( 'team_member_2_photo' ) : AURELIS_URI . '/assets/about-bg.svg' ); ?>" alt="Łukasz Pytlic" style="border-radius:50%; width:120px; height:120px; object-fit:cover; margin:0 auto 18px;">
         <h3>Łukasz Pytlic</h3>
         <p>Kierownik budowy</p>
       </div>
       <div class="card reveal reveal-delay-2" style="text-align:center;">
-        <img src="<?php echo esc_url( AURELIS_URI . '/assets/about-bg.svg' ); ?>" alt="Placeholder zdjęcia" style="border-radius:50%; width:120px; height:120px; object-fit:cover; margin:0 auto 18px;">
+        <img src="<?php echo esc_url( aurelis_company( 'team_member_3_photo' ) ? aurelis_company( 'team_member_3_photo' ) : AURELIS_URI . '/assets/about-bg.svg' ); ?>" alt="Barbara Krzyworzeka" style="border-radius:50%; width:120px; height:120px; object-fit:cover; margin:0 auto 18px;">
         <h3>Barbara Krzyworzeka</h3>
         <p>Architekt</p>
       </div>

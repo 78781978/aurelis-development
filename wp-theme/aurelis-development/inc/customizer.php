@@ -1,7 +1,7 @@
 <?php
 /**
  * Kreator motywu (Customizer) — dane firmowe edytowalne bez dotykania kodu.
- * Wygląd → Personalizacja → "Dane firmy Aurelis".
+ * Wygląd → Personalizacja → "Dane firmy Aurelis" / "Zdjęcia zespołu".
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -23,18 +23,16 @@ function aurelis_customize_register( $wp_customize ) {
 		'aurelis_address_city'   => array( 'label' => 'Adres — kod i miejscowość', 'default' => '32-091 Michałowice' ),
 		'aurelis_hours'          => array( 'label' => 'Godziny pracy biura', 'default' => 'Pon–Pt: 8:00–16:00' ),
 		'aurelis_nip'            => array( 'label' => 'NIP', 'default' => '675-154-51-05' ),
+		'aurelis_krs'            => array( 'label' => 'KRS', 'default' => '0000618799' ),
+		'aurelis_regon'          => array( 'label' => 'REGON', 'default' => '364479265' ),
 		'aurelis_company_name'   => array( 'label' => 'Pełna nazwa spółki', 'default' => 'Aurelis Development Sp. z o.o.' ),
 		'aurelis_map_embed_url'  => array(
 			'label'   => 'Adres URL mapy (OpenStreetMap embed)',
 			'default' => 'https://www.openstreetmap.org/export/embed.html?bbox=19.7492%2C50.0989%2C19.7792%2C50.1149&layer=mapnik&marker=50.1069%2C19.7642',
 		),
-		'aurelis_social_facebook'  => array( 'label' => 'Facebook — adres URL', 'default' => '' ),
-		'aurelis_social_instagram' => array( 'label' => 'Instagram — adres URL', 'default' => '' ),
-		'aurelis_social_linkedin'  => array( 'label' => 'LinkedIn — adres URL', 'default' => '' ),
+		'aurelis_social_facebook'  => array( 'label' => 'Facebook — adres URL', 'default' => 'https://www.facebook.com/profile.php?id=61591508803163' ),
 		'aurelis_stat_projects'  => array( 'label' => 'Statystyka: liczba projektów', 'default' => '120+' ),
-		'aurelis_stat_years'     => array( 'label' => 'Statystyka: lat na rynku', 'default' => '12' ),
-		'aurelis_stat_team'      => array( 'label' => 'Statystyka: osób w zespole', 'default' => '35' ),
-		'aurelis_stat_recommend' => array( 'label' => 'Statystyka: % poleceń', 'default' => '98%' ),
+		'aurelis_stat_years'     => array( 'label' => 'Statystyka: lat na rynku', 'default' => '10' ),
 		'aurelis_stat_satisfaction' => array( 'label' => 'Hero strony głównej: % zadowolonych klientów', 'default' => '100%' ),
 		'aurelis_footer_about'   => array(
 			'label'   => 'Krótki opis firmy w stopce',
@@ -70,6 +68,35 @@ function aurelis_customize_register( $wp_customize ) {
 			) );
 		}
 	}
+
+	/**
+	 * Zdjęcia — logo ustawia się w "Identyfikacja strony" (WP dodaje to
+	 * automatycznie dzięki add_theme_support('custom-logo') w functions.php).
+	 * Tu tylko zdjęcie zespołu na stronie głównej i 3 zdjęcia osób z zespołu.
+	 */
+	$wp_customize->add_section( 'aurelis_team_images', array(
+		'title'    => __( 'Zdjęcia zespołu', 'aurelis-development' ),
+		'priority' => 31,
+	) );
+
+	$image_fields = array(
+		'aurelis_team_photo'          => __( 'Zdjęcie zespołu (Strona główna)', 'aurelis-development' ),
+		'aurelis_team_member_1_photo' => __( 'Zdjęcie: Przemysław Pieprzyk (Prezes)', 'aurelis-development' ),
+		'aurelis_team_member_2_photo' => __( 'Zdjęcie: Łukasz Pytlic (Kierownik budowy)', 'aurelis-development' ),
+		'aurelis_team_member_3_photo' => __( 'Zdjęcie: Barbara Krzyworzeka (Architekt)', 'aurelis-development' ),
+	);
+
+	foreach ( $image_fields as $id => $label ) {
+		$wp_customize->add_setting( $id, array(
+			'default'           => '',
+			'sanitize_callback' => 'esc_url_raw',
+			'transport'         => 'refresh',
+		) );
+		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, $id, array(
+			'label'   => $label,
+			'section' => 'aurelis_team_images',
+		) ) );
+	}
 }
 add_action( 'customize_register', 'aurelis_customize_register' );
 
@@ -85,17 +112,19 @@ function aurelis_company( $key ) {
 		'address_city'   => '32-091 Michałowice',
 		'hours'          => 'Pon–Pt: 8:00–16:00',
 		'nip'            => '675-154-51-05',
+		'krs'            => '0000618799',
+		'regon'          => '364479265',
 		'company_name'   => 'Aurelis Development Sp. z o.o.',
 		'map_embed_url'  => 'https://www.openstreetmap.org/export/embed.html?bbox=19.7492%2C50.0989%2C19.7792%2C50.1149&layer=mapnik&marker=50.1069%2C19.7642',
-		'social_facebook'  => '',
-		'social_instagram' => '',
-		'social_linkedin'  => '',
+		'social_facebook'  => 'https://www.facebook.com/profile.php?id=61591508803163',
 		'stat_projects'  => '120+',
-		'stat_years'     => '12',
-		'stat_team'      => '35',
-		'stat_recommend' => '98%',
+		'stat_years'     => '10',
 		'stat_satisfaction' => '100%',
 		'footer_about'   => 'Aurelis Development Sp. z o.o. — generalne wykonawstwo inwestycji mieszkaniowych i przemysłowych na terenie całej Małopolski.',
+		'team_photo'          => '',
+		'team_member_1_photo' => '',
+		'team_member_2_photo' => '',
+		'team_member_3_photo' => '',
 	);
 	$default = isset( $defaults[ $key ] ) ? $defaults[ $key ] : '';
 	return get_theme_mod( 'aurelis_' . $key, $default );

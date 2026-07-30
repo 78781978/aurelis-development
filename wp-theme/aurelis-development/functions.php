@@ -19,6 +19,12 @@ function aurelis_setup() {
 	add_theme_support( 'post-thumbnails' );
 	add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption', 'style', 'script' ) );
 	add_theme_support( 'automatic-feed-links' );
+	add_theme_support( 'custom-logo', array(
+		'height'      => 90,
+		'width'       => 300,
+		'flex-height' => true,
+		'flex-width'  => true,
+	) );
 
 	register_nav_menus( array(
 		'primary' => __( 'Menu główne', 'aurelis-development' ),
@@ -36,9 +42,14 @@ function aurelis_assets() {
 add_action( 'wp_enqueue_scripts', 'aurelis_assets' );
 
 /**
- * Favicon (znak graficzny logo).
+ * Favicon — domyślny znak graficzny logo, ale jeśli ktoś ustawi własną
+ * "Ikonę strony" w Ustawienia → Ogólne, WordPress obsłuży ją sam i tu
+ * nic nie robimy, żeby nie dublować znacznika <link rel="icon">.
  */
 function aurelis_favicon() {
+	if ( has_site_icon() ) {
+		return;
+	}
 	echo '<link rel="icon" type="image/svg+xml" href="' . esc_url( AURELIS_URI . '/assets/logo-mark.svg' ) . '">' . "\n";
 }
 add_action( 'wp_head', 'aurelis_favicon' );

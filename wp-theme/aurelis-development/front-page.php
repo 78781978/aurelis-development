@@ -25,7 +25,7 @@ while ( have_posts() ) :
 		$heading2 = 'Dotrzymujemy słowa.';
 	}
 	if ( ! $lead ) {
-		$lead = 'Generalne wykonawstwo inwestycji mieszkaniowych i przemysłowych — od osiedli domów jednorodzinnych, przez hale i budynki wielorodzinne, po remonty i wykończenia. Ponad 12 lat doświadczenia na terenie Małopolski.';
+		$lead = 'Generalne wykonawstwo inwestycji mieszkaniowych i przemysłowych — od osiedli domów jednorodzinnych, przez hale i budynki wielorodzinne, po remonty i wykończenia. Ponad 10 lat doświadczenia na terenie Małopolski.';
 	}
 	?>
 
@@ -101,11 +101,9 @@ while ( have_posts() ) :
 
 <section class="stat-strip">
   <div class="container">
-    <div class="grid grid--4">
+    <div class="grid grid--2 stat-strip-grid">
       <div><strong data-count="<?php echo esc_attr( aurelis_company( 'stat_projects' ) ); ?>"><?php echo esc_html( aurelis_company( 'stat_projects' ) ); ?></strong><span>Projektów</span></div>
       <div><strong data-count="<?php echo esc_attr( aurelis_company( 'stat_years' ) ); ?>"><?php echo esc_html( aurelis_company( 'stat_years' ) ); ?></strong><span>Lat na rynku</span></div>
-      <div><strong data-count="<?php echo esc_attr( aurelis_company( 'stat_team' ) ); ?>"><?php echo esc_html( aurelis_company( 'stat_team' ) ); ?></strong><span>Osób w zespole</span></div>
-      <div><strong data-count="<?php echo esc_attr( aurelis_company( 'stat_recommend' ) ); ?>"><?php echo esc_html( aurelis_company( 'stat_recommend' ) ); ?></strong><span>Poleceń klientów</span></div>
     </div>
   </div>
 </section>
@@ -119,7 +117,7 @@ while ( have_posts() ) :
         <?php if ( get_the_content() ) : ?>
           <?php the_content(); ?>
         <?php else : ?>
-          <p>Działamy na terenie Małopolski od ponad 12 lat. Każdy projekt realizujemy zgodnie z harmonogramem i budżetem, a klient na bieżąco ma wgląd w postępy prac.</p>
+          <p>Działamy na terenie Małopolski od ponad 10 lat. Każdy projekt realizujemy zgodnie z harmonogramem i budżetem, a klient na bieżąco ma wgląd w postępy prac.</p>
         <?php endif; ?>
         <ul class="values-list">
           <li><div><strong>Doświadczony zespół</strong><br>Wykwalifikowani kierownicy budów, majstrowie i ekipy specjalistyczne.</div></li>
@@ -130,7 +128,7 @@ while ( have_posts() ) :
         <a href="<?php echo esc_url( aurelis_page_url( 'o-nas' ) ); ?>" class="btn btn--dark">Poznaj naszą firmę</a>
       </div>
       <div class="reveal reveal-delay-1">
-        <img src="<?php echo esc_url( AURELIS_URI . '/assets/zespol.png' ); ?>" alt="Zespół Aurelis Development">
+        <img src="<?php echo esc_url( aurelis_company( 'team_photo' ) ? aurelis_company( 'team_photo' ) : AURELIS_URI . '/assets/zespol.png' ); ?>" alt="Zespół Aurelis Development">
       </div>
     </div>
   </div>

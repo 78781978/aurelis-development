@@ -8,8 +8,6 @@
         <p><?php echo esc_html( aurelis_company( 'footer_about' ) ); ?></p>
         <div class="social-links">
           <?php if ( aurelis_company( 'social_facebook' ) ) : ?><a href="<?php echo esc_url( aurelis_company( 'social_facebook' ) ); ?>" aria-label="Facebook" target="_blank" rel="noopener">FB</a><?php endif; ?>
-          <?php if ( aurelis_company( 'social_instagram' ) ) : ?><a href="<?php echo esc_url( aurelis_company( 'social_instagram' ) ); ?>" aria-label="Instagram" target="_blank" rel="noopener">IG</a><?php endif; ?>
-          <?php if ( aurelis_company( 'social_linkedin' ) ) : ?><a href="<?php echo esc_url( aurelis_company( 'social_linkedin' ) ); ?>" aria-label="LinkedIn" target="_blank" rel="noopener">IN</a><?php endif; ?>
         </div>
       </div>
       <div>
@@ -50,6 +48,9 @@
       <span>© <?php echo esc_html( date_i18n( 'Y' ) ); ?> <?php echo esc_html( aurelis_company( 'company_name' ) ); ?> Wszelkie prawa zastrzeżone.</span>
       <a href="<?php echo esc_url( aurelis_page_url( 'regulamin' ) ); ?>">Regulamin</a>
       <a href="<?php echo esc_url( aurelis_page_url( 'polityka-prywatnosci' ) ); ?>">Polityka prywatności</a>
+    </div>
+    <div class="footer-credit">
+      <a href="https://www.facebook.com/profile.php?id=61591915780293" target="_blank" rel="noopener">Projekt i wykonanie: VERO STUDIO</a>
     </div>
   </div>
 </footer>

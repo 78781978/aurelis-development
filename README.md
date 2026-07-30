@@ -129,8 +129,12 @@ Po włączeniu motywu strona nie będzie jeszcze wyglądać poprawnie, dopóki n
 ### Co jest edytowalne z panelu, a co nie
 
 **Edytowalne bez dotykania kodu:**
-- Dane kontaktowe firmy, statystyki, link do mapy, tekst stopki (Customizer).
-- Realizacje i opinie klientów (osobne typy treści, dowolna liczba wpisów).
+- Dane kontaktowe firmy, NIP/KRS/REGON, statystyki, link do mapy, Facebook, tekst stopki (Customizer → "Dane firmy Aurelis").
+- Realizacje i opinie klientów (osobne typy treści, dowolna liczba wpisów, zdjęcie realizacji = zdjęcie wyróżniające).
+- **Logo** — Wygląd → Personalizacja → "Identyfikacja strony" (dzięki `add_theme_support('custom-logo')`).
+- **Ikona strony (favicon)** — Ustawienia → Ogólne → "Ikona strony"; jeśli nie ustawiona, używany jest domyślny znak graficzny z motywu.
+- **Zdjęcie hero na stronie głównej** oraz **zdjęcie w sekcji "Nasza historia" na O nas** — zdjęcie wyróżniające odpowiedniej Strony.
+- **Zdjęcie zespołu na stronie głównej i 3 zdjęcia osób z zespołu na O nas** — Customizer → "Zdjęcia zespołu".
 - Nagłówek (hero) strony głównej — eyebrow, dwie linie nagłówka, lead (pole meta w edytorze Strony głównej).
 - Podtytuł pod nagłówkiem na każdej podstronie (pole meta w edytorze każdej Strony).
 - Stawka i lokalizacja oferty pracy na stronie `praca` (pola meta w edytorze tej Strony).
