@@ -71,11 +71,15 @@ while ( have_posts() ) :
 
         <?php if ( 'blad' === $sent ) : ?>
           <p class="form-status is-error">Ups, coś poszło nie tak — sprawdź, czy wszystkie wymagane pola są wypełnione, i spróbuj ponownie, albo zadzwoń bezpośrednio.</p>
+        <?php elseif ( 'zbyt_duzy' === $sent ) : ?>
+          <p class="form-status is-error">Załącznik jest za duży (maks. 5 MB) — zmniejsz plik i spróbuj ponownie.</p>
+        <?php elseif ( 'zly_plik' === $sent ) : ?>
+          <p class="form-status is-error">Nieobsługiwany format załącznika — dozwolone: PDF, JPG, PNG, DOC, DOCX.</p>
         <?php elseif ( '1' === $sent ) : ?>
           <p class="form-status is-success">Dziękujemy! Wiadomość została wysłana — odezwiemy się jak najszybciej.</p>
         <?php endif; ?>
 
-        <form class="contact-form" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>" method="post">
+        <form class="contact-form" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>" method="post" enctype="multipart/form-data">
           <input type="hidden" name="action" value="aurelis_contact_form">
           <?php wp_nonce_field( 'aurelis_contact_form', 'aurelis_contact_nonce' ); ?>
           <div class="hp-field" aria-hidden="true">
@@ -107,6 +111,11 @@ while ( have_posts() ) :
           <div>
             <label for="message">Wiadomość</label>
             <textarea id="message" name="message" rows="5" required placeholder="Opisz krótko swój projekt..."></textarea>
+          </div>
+          <div>
+            <label for="attachment">Załącznik (opcjonalnie)</label>
+            <input type="file" id="attachment" name="attachment" accept=".pdf,.jpg,.jpeg,.png,.doc,.docx">
+            <p class="form-note">Np. rzut, zdjęcie lub kosztorys. Dozwolone: PDF, JPG, PNG, DOC, DOCX, maks. 5 MB.</p>
           </div>
           <button type="submit" class="btn btn--accent">Wyślij zapytanie</button>
         </form>

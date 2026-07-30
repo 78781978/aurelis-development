@@ -91,7 +91,7 @@
         <h2>Napisz do nas</h2>
         <p>Wypełnij poniższy formularz - oddzwonimy lub odpiszemy z wyceną. (Formularz demonstracyjny - wymaga podłączenia np. Formspree/EmailJS lub własnego backendu, aby wiadomości trafiały na maila).</p>
 
-        <form class="contact-form" action="#" method="post">
+        <form class="contact-form" action="#" method="post" enctype="multipart/form-data">
           <div>
             <label for="name">Imię i nazwisko</label>
             <input type="text" id="name" name="name" autocomplete="name" required placeholder="Jan Kowalski">
@@ -117,6 +117,11 @@
           <div>
             <label for="message">Wiadomość</label>
             <textarea id="message" name="message" rows="5" required placeholder="Opisz krótko swój projekt..."></textarea>
+          </div>
+          <div>
+            <label for="attachment">Załącznik (opcjonalnie)</label>
+            <input type="file" id="attachment" name="attachment" accept=".pdf,.jpg,.jpeg,.png,.doc,.docx">
+            <p class="form-note">Np. rzut, zdjęcie lub kosztorys. Dozwolone: PDF, JPG, PNG, DOC, DOCX, maks. 5 MB.</p>
           </div>
           <button type="submit" class="btn btn--accent">Wyślij zapytanie</button>
           <p class="form-status form-note"></p>
