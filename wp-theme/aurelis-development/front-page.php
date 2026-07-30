@@ -25,7 +25,7 @@ while ( have_posts() ) :
 		$heading2 = 'Dotrzymujemy słowa.';
 	}
 	if ( ! $lead ) {
-		$lead = 'Generalne wykonawstwo inwestycji mieszkaniowych i przemysłowych — od osiedli domów jednorodzinnych, przez hale i budynki wielorodzinne, po remonty i wykończenia. Ponad 10 lat doświadczenia na terenie Małopolski.';
+		$lead = 'Generalne wykonawstwo inwestycji mieszkaniowych i przemysłowych — od osiedli domów jednorodzinnych, przez hale i budynki wielorodzinne, po remonty i wykończenia. Ponad 10 lat doświadczenia na terenie Małopolski.';
 	}
 	?>
 
@@ -59,13 +59,13 @@ while ( have_posts() ) :
     <div class="section-head reveal">
       <span class="eyebrow">Generalne wykonawstwo</span>
       <h2>Wszystko, czego potrzebuje Twoja inwestycja</h2>
-      <p>Od pierwszego szkicu po ostatni gwóźdź — zajmujemy się każdym etapem realizacji inwestycji mieszkaniowej i przemysłowej.</p>
+      <p>Od pierwszego szkicu po ostatni gwóźdź — zajmujemy się każdym etapem realizacji inwestycji mieszkaniowej i przemysłowej.</p>
     </div>
     <div class="grid grid--3">
       <div class="card reveal">
         <div class="icon">01</div>
         <h3>Budowa osiedli domów jednorodzinnych</h3>
-        <p>Kompleksowa realizacja osiedli, zgodnie z projektem i harmonogramem inwestora.</p>
+        <p>Kompleksowa realizacja osiedli, zgodnie z projektem i harmonogramem inwestora.</p>
       </div>
       <div class="card reveal reveal-delay-1">
         <div class="icon">02</div>
@@ -74,18 +74,18 @@ while ( have_posts() ) :
       </div>
       <div class="card reveal reveal-delay-2">
         <div class="icon">03</div>
-        <h3>Hale przemysłowe i magazynowe</h3>
-        <p>Budowa hal przemysłowych i magazynowych w konstrukcji dopasowanej do potrzeb inwestycji.</p>
+        <h3>Hale przemysłowe i magazynowe</h3>
+        <p>Budowa hal przemysłowych i magazynowych w konstrukcji dopasowanej do potrzeb inwestycji.</p>
       </div>
       <div class="card reveal">
         <div class="icon">04</div>
         <h3>Kompleksowe roboty żelbetowe</h3>
-        <p>Konstrukcje żelbetowe wykonywane z zachowaniem najwyższych standardów jakości.</p>
+        <p>Konstrukcje żelbetowe wykonywane z zachowaniem najwyższych standardów jakości.</p>
       </div>
       <div class="card reveal reveal-delay-1">
         <div class="icon">05</div>
-        <h3>Dachy i konstrukcje dachowe</h3>
-        <p>Więźby dachowe, pokrycia, obróbki blacharskie i renowacje istniejących dachów.</p>
+        <h3>Dachy i konstrukcje dachowe</h3>
+        <p>Więźby dachowe, pokrycia, obróbki blacharskie i renowacje istniejących dachów.</p>
       </div>
       <div class="card reveal reveal-delay-2">
         <div class="icon">06</div>
@@ -101,9 +101,10 @@ while ( have_posts() ) :
 
 <section class="stat-strip">
   <div class="container">
-    <div class="grid grid--2 stat-strip-grid">
+    <div class="grid grid--3 stat-strip-grid">
       <div><strong data-count="<?php echo esc_attr( aurelis_company( 'stat_projects' ) ); ?>"><?php echo esc_html( aurelis_company( 'stat_projects' ) ); ?></strong><span>Projektów</span></div>
       <div><strong data-count="<?php echo esc_attr( aurelis_company( 'stat_years' ) ); ?>"><?php echo esc_html( aurelis_company( 'stat_years' ) ); ?></strong><span>Lat na rynku</span></div>
+      <div><strong data-count="<?php echo esc_attr( aurelis_company( 'stat_satisfaction' ) ); ?>"><?php echo esc_html( aurelis_company( 'stat_satisfaction' ) ); ?></strong><span>Zadowolenia klientów</span></div>
     </div>
   </div>
 </section>
@@ -113,17 +114,17 @@ while ( have_posts() ) :
     <div class="split">
       <div class="reveal">
         <span class="eyebrow">Dlaczego Aurelis Development</span>
-        <h2>Solidność, terminowość i przejrzyste zasady współpracy</h2>
+        <h2>Solidność, terminowość i przejrzyste zasady współpracy</h2>
         <?php if ( get_the_content() ) : ?>
           <?php the_content(); ?>
         <?php else : ?>
-          <p>Działamy na terenie Małopolski od ponad 10 lat. Każdy projekt realizujemy zgodnie z harmonogramem i budżetem, a klient na bieżąco ma wgląd w postępy prac.</p>
+          <p>Działamy na terenie Małopolski od ponad 10 lat. Każdy projekt realizujemy zgodnie z harmonogramem i budżetem, a klient na bieżąco ma wgląd w postępy prac.</p>
         <?php endif; ?>
         <ul class="values-list">
-          <li><div><strong>Doświadczony zespół</strong><br>Wykwalifikowani kierownicy budów, majstrowie i ekipy specjalistyczne.</div></li>
-          <li><div><strong>Umowa i gwarancja</strong><br>Jasne warunki współpracy, gwarancja na wykonane prace.</div></li>
+          <li><div><strong>Doświadczony zespół</strong><br>Wykwalifikowani kierownicy budów, majstrowie i ekipy specjalistyczne.</div></li>
+          <li><div><strong>Umowa i gwarancja</strong><br>Jasne warunki współpracy, gwarancja na wykonane prace.</div></li>
           <li><div><strong>Materiały sprawdzonych marek</strong><br>Współpracujemy wyłącznie ze sprawdzonymi dostawcami.</div></li>
-          <li><div><strong>Stały kontakt</strong><br>Bieżące raportowanie postępu prac i dostępność kierownika budowy.</div></li>
+          <li><div><strong>Stały kontakt</strong><br>Bieżące raportowanie postępu prac i dostępność kierownika budowy.</div></li>
         </ul>
         <a href="<?php echo esc_url( aurelis_page_url( 'o-nas' ) ); ?>" class="btn btn--dark">Poznaj naszą firmę</a>
       </div>
@@ -137,9 +138,9 @@ while ( have_posts() ) :
 <section class="cta-banner">
   <div class="container reveal">
     <span class="eyebrow">Masz pomysł na budowę lub remont?</span>
-    <h2>Porozmawiajmy o Twoim projekcie</h2>
-    <p>Skontaktuj się z nami — przygotujemy bezpłatną, niezobowiązującą wycenę dopasowaną do Twoich potrzeb.</p>
-    <a href="<?php echo esc_url( aurelis_page_url( 'kontakt' ) ); ?>" class="btn btn--accent">Skontaktuj się z nami</a>
+    <h2>Porozmawiajmy o Twoim projekcie</h2>
+    <p>Skontaktuj się z nami — przygotujemy bezpłatną, niezobowiązującą wycenę dopasowaną do Twoich potrzeb.</p>
+    <a href="<?php echo esc_url( aurelis_page_url( 'kontakt' ) ); ?>" class="btn btn--accent">Skontaktuj się z nami</a>
   </div>
 </section>
 

@@ -28,16 +28,16 @@ while ( have_posts() ) :
 	$demo_realizacje = array(
 		array( 'realizacja-01.svg', 'Dom jednorodzinny — Kraków' ),
 		array( 'realizacja-02.svg', 'Remont wnętrz — Wieliczka' ),
-		array( 'realizacja-03.svg', 'Elewacja i termomodernizacja' ),
+		array( 'realizacja-03.svg', 'Elewacja i termomodernizacja' ),
 		array( 'realizacja-04.svg', 'Budowa domu — Skawina' ),
 		array( 'realizacja-05.svg', 'Wykończenie pod klucz' ),
-		array( 'realizacja-06.svg', 'Dach i pokrycie dachowe' ),
+		array( 'realizacja-06.svg', 'Dach i pokrycie dachowe' ),
 	);
 
 	$demo_opinie = array(
-		array( '„Ekipa Aurelis Development wybudowała nasz dom zgodnie z harmonogramem i budżetem. Świetna komunikacja na każdym etapie."', 'Anna K., Kraków' ),
-		array( '„Profesjonalny remont mieszkania — czysto, terminowo i bez niespodzianek kosztowych. Polecamy!"', 'Marek W., Wieliczka' ),
-		array( '„Docieplenie i elewacja domu wykonane solidnie. Widać doświadczenie i dbałość o detale."', 'Katarzyna S., Skawina' ),
+		array( '„Ekipa Aurelis Development wybudowała nasz dom zgodnie z harmonogramem i budżetem. Świetna komunikacja na każdym etapie."', 'Anna K., Kraków' ),
+		array( '„Profesjonalny remont mieszkania — czysto, terminowo i bez niespodzianek kosztowych. Polecamy!"', 'Marek W., Wieliczka' ),
+		array( '„Docieplenie i elewacja domu wykonane solidnie. Widać doświadczenie i dbałość o detale."', 'Katarzyna S., Skawina' ),
 	);
 	?>
 
@@ -76,7 +76,7 @@ while ( have_posts() ) :
             <span class="gallery-tag"><?php echo esc_html( $item[1] ); ?></span>
           </div>
         <?php endforeach; ?>
-        <p class="form-note" style="grid-column:1/-1;">Powyższe zdjęcia to placeholdery demonstracyjne. Dodaj własne realizacje w panelu: <strong>Realizacje → Dodaj realizację</strong> (tytuł = podpis pod zdjęciem, zdjęcie wyróżniające = fotografia).</p>
+        <p class="form-note" style="grid-column:1/-1;">Powyższe zdjęcia to placeholdery demonstracyjne. Dodaj własne realizacje w panelu: <strong>Realizacje → Dodaj realizację</strong> (tytuł = podpis pod zdjęciem, zdjęcie wyróżniające = fotografia).</p>
       <?php endif; ?>
     </div>
   </div>
@@ -86,7 +86,7 @@ while ( have_posts() ) :
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">Opinie klientów</span>
-      <h2>Co mówią o nas klienci</h2>
+      <h2>Co mówią o nas klienci</h2>
     </div>
     <div class="grid grid--3">
       <?php if ( $opinie_query->have_posts() ) : ?>
@@ -109,7 +109,7 @@ while ( have_posts() ) :
             <h3>- <?php echo esc_html( $opinia[1] ); ?></h3>
           </div>
         <?php endforeach; ?>
-        <p class="form-note" style="grid-column:1/-1;">Powyższe opinie są przykładowe. Dodaj prawdziwe recenzje w panelu: <strong>Opinie klientów → Dodaj opinię</strong> (tytuł = autor i miejscowość, treść = cytat).</p>
+        <p class="form-note" style="grid-column:1/-1;">Powyższe opinie są przykładowe. Dodaj prawdziwe recenzje w panelu: <strong>Opinie klientów → Dodaj opinię</strong> (tytuł = autor i miejscowość, treść = cytat).</p>
       <?php endif; ?>
     </div>
   </div>
@@ -119,7 +119,7 @@ while ( have_posts() ) :
   <div class="container reveal">
     <span class="eyebrow">Podoba Ci się nasza praca?</span>
     <h2>Zrealizujmy razem Twój projekt</h2>
-    <a href="<?php echo esc_url( aurelis_page_url( 'kontakt' ) ); ?>" class="btn btn--accent">Skontaktuj się z nami</a>
+    <a href="<?php echo esc_url( aurelis_page_url( 'kontakt' ) ); ?>" class="btn btn--accent">Skontaktuj się z nami</a>
   </div>
 </section>
 

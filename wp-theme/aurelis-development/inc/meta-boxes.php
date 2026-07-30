@@ -38,7 +38,7 @@ function aurelis_add_meta_boxes() {
 	if ( $post && 'praca' === $post->post_name ) {
 		add_meta_box(
 			'aurelis_job_details',
-			__( 'Oferta pracy — stawka i lokalizacja', 'aurelis-development' ),
+			__( 'Oferta pracy — stawka i lokalizacja', 'aurelis-development' ),
 			'aurelis_render_job_details_box',
 			'page',
 			'normal',
@@ -51,7 +51,7 @@ add_action( 'add_meta_boxes', 'aurelis_add_meta_boxes' );
 function aurelis_render_hero_subtitle_box( $post ) {
 	wp_nonce_field( 'aurelis_save_meta', 'aurelis_meta_nonce' );
 	$value = get_post_meta( $post->ID, '_aurelis_hero_subtitle', true );
-	echo '<p>' . esc_html__( 'Krótki tekst wyświetlany pod tytułem strony w ciemnym pasku na górze. Zostaw puste, aby użyć domyślnego tekstu.', 'aurelis-development' ) . '</p>';
+	echo '<p>' . esc_html__( 'Krótki tekst wyświetlany pod tytułem strony w ciemnym pasku na górze. Zostaw puste, aby użyć domyślnego tekstu.', 'aurelis-development' ) . '</p>';
 	echo '<textarea style="width:100%;" rows="3" name="aurelis_hero_subtitle">' . esc_textarea( $value ) . '</textarea>';
 }
 
@@ -79,7 +79,7 @@ function aurelis_render_job_details_box( $post ) {
 	<p><label><strong><?php esc_html_e( 'Stawka (badge)', 'aurelis-development' ); ?></strong><br>
 	<input type="text" style="width:100%;" name="aurelis_job_rate" value="<?php echo esc_attr( $rate ); ?>" placeholder="35–45 zł/h NETTO"></label></p>
 	<p><label><strong><?php esc_html_e( 'Lokalizacja', 'aurelis-development' ); ?></strong><br>
-	<input type="text" style="width:100%;" name="aurelis_job_location" value="<?php echo esc_attr( $location ); ?>" placeholder="Kraków i okolice"></label></p>
+	<input type="text" style="width:100%;" name="aurelis_job_location" value="<?php echo esc_attr( $location ); ?>" placeholder="Kraków i okolice"></label></p>
 	<?php
 }
 
@@ -122,7 +122,7 @@ function aurelis_save_meta_boxes( $post_id ) {
 add_action( 'save_post_page', 'aurelis_save_meta_boxes' );
 
 /**
- * Pobiera podtytuł (hero) danej strony z sensownym tekstem domyślnym.
+ * Pobiera podtytuł (hero) danej strony z sensownym tekstem domyślnym.
  */
 function aurelis_hero_subtitle( $post_id, $default = '' ) {
 	$value = get_post_meta( $post_id, '_aurelis_hero_subtitle', true );
@@ -130,7 +130,7 @@ function aurelis_hero_subtitle( $post_id, $default = '' ) {
 }
 
 /**
- * Pobiera pole oferty pracy (stawka / lokalizacja) z sensownym tekstem domyślnym.
+ * Pobiera pole oferty pracy (stawka / lokalizacja) z sensownym tekstem domyślnym.
  */
 function aurelis_job_field( $post_id, $meta_key, $default = '' ) {
 	$value = get_post_meta( $post_id, $meta_key, true );

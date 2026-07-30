@@ -70,7 +70,7 @@ function aurelis_handle_contact_form() {
 
 	$to      = aurelis_company( 'email' );
 	$subject = sprintf( __( 'Nowe zapytanie ze strony — %s', 'aurelis-development' ), $name );
-	$body    = "Imię i nazwisko: {$name}\n";
+	$body    = "Imię i nazwisko: {$name}\n";
 	$body   .= "Telefon: {$phone}\n";
 	$body   .= "E-mail: {$email}\n";
 	$body   .= "Rodzaj usługi: {$service}\n\n";
@@ -95,5 +95,5 @@ add_action( 'admin_post_nopriv_aurelis_contact_form', 'aurelis_handle_contact_fo
 add_action( 'admin_post_aurelis_contact_form', 'aurelis_handle_contact_form' );
 
 /**
- * Formularz rekrutacyjny (praca.html) korzysta z prostego linku mailto — nie wymaga backendu.
+ * Formularz rekrutacyjny (praca.html) korzysta z prostego linku mailto — nie wymaga backendu.
  */

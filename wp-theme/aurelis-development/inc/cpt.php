@@ -52,9 +52,9 @@ function aurelis_register_post_types() {
 add_action( 'init', 'aurelis_register_post_types' );
 
 /**
- * Podpowiedzi w edytorze, żeby było wiadomo, co wpisać gdzie:
+ * Podpowiedzi w edytorze, żeby było wiadomo, co wpisać gdzie:
  * - Realizacja: tytuł = podpis pod zdjęciem (np. "Dom jednorodzinny — Kraków"), zdjęcie wyróżniające = fotografia.
- * - Opinia: tytuł = autor i miejscowość (np. "Anna K., Kraków"), treść = cytat z opinii.
+ * - Opinia: tytuł = autor i miejscowość (np. "Anna K., Kraków"), treść = cytat z opinii.
  */
 function aurelis_cpt_title_placeholder( $title, $post ) {
 	if ( 'realizacja' === $post->post_type ) {

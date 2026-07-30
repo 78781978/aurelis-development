@@ -27,7 +27,7 @@
       <div>
         <h4>Usługi</h4>
         <ul>
-          <li><a href="<?php echo esc_url( aurelis_page_url( 'uslugi' ) ); ?>">Budowa domów i osiedli</a></li>
+          <li><a href="<?php echo esc_url( aurelis_page_url( 'uslugi' ) ); ?>">Budowa domów i osiedli</a></li>
           <li><a href="<?php echo esc_url( aurelis_page_url( 'uslugi' ) ); ?>">Hale przemysłowe</a></li>
           <li><a href="<?php echo esc_url( aurelis_page_url( 'uslugi' ) ); ?>">Roboty żelbetowe</a></li>
           <li><a href="<?php echo esc_url( aurelis_page_url( 'uslugi' ) ); ?>">Wykończenia wnętrz</a></li>
@@ -48,16 +48,14 @@
       <span>© <?php echo esc_html( date_i18n( 'Y' ) ); ?> <?php echo esc_html( aurelis_company( 'company_name' ) ); ?> Wszelkie prawa zastrzeżone.</span>
       <a href="<?php echo esc_url( aurelis_page_url( 'regulamin' ) ); ?>">Regulamin</a>
       <a href="<?php echo esc_url( aurelis_page_url( 'polityka-prywatnosci' ) ); ?>">Polityka prywatności</a>
-    </div>
-    <div class="footer-credit">
-      <a href="https://www.facebook.com/profile.php?id=61591915780293" target="_blank" rel="noopener">Projekt i wykonanie: VERO STUDIO</a>
+      <a href="https://www.facebook.com/profile.php?id=61591915780293" target="_blank" rel="noopener" class="footer-credit-link">Projekt i wykonanie: <span class="shine-text">VERO STUDIO</span></a>
     </div>
   </div>
 </footer>
 
 <div class="cookie-banner" id="cookieBanner">
   <div class="cookie-banner-inner">
-    <p>Ta strona wykorzystuje pliki cookie, aby zapewnić jej prawidłowe działanie oraz — po Twojej zgodzie — do celów statystycznych. Więcej informacji znajdziesz w <a href="<?php echo esc_url( aurelis_page_url( 'polityka-prywatnosci' ) . '#cookies' ); ?>">Polityce prywatności</a>.</p>
+    <p>Ta strona wykorzystuje pliki cookie, aby zapewnić jej prawidłowe działanie oraz — po Twojej zgodzie — do celów statystycznych. Więcej informacji znajdziesz w <a href="<?php echo esc_url( aurelis_page_url( 'polityka-prywatnosci' ) . '#cookies' ); ?>">Polityce prywatności</a>.</p>
     <div class="cookie-banner-actions">
       <button type="button" class="btn btn--outline btn--sm" id="cookieRejectBtn">Tylko niezbędne</button>
       <button type="button" class="btn btn--accent btn--sm" id="cookieAcceptBtn">Akceptuj wszystkie</button>

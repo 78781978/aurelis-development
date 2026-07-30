@@ -10,16 +10,16 @@ while ( have_posts() ) :
 	$subtitle = aurelis_hero_subtitle( get_the_ID(), 'Kompleksowa obsługa inwestycji budowlanych na terenie Małopolski — od projektu, przez realizację, po odbiór końcowy.' );
 
 	$services = array(
-		array( 'Budowa osiedli domów jednorodzinnych', 'Realizujemy budowę osiedli domów jednorodzinnych w stanie surowym otwartym, zamkniętym oraz pod klucz. Pełna koordynacja wszystkich etapów: fundamenty, konstrukcja, dach, instalacje, wykończenie.' ),
-		array( 'Budowa budynków wielorodzinnych', 'Generalne wykonawstwo budynków wielorodzinnych — od stanu zerowego, przez konstrukcję i instalacje, po odbiór końcowy z inwestorem.' ),
-		array( 'Budowa hal przemysłowych i magazynowych', 'Realizacja hal przemysłowych i magazynowych w konstrukcji stalowej lub żelbetowej, dopasowanej do potrzeb technologicznych inwestycji.' ),
-		array( 'Stan surowy otwarty i zamknięty', 'Wykonawstwo stanu surowego otwartego i zamkniętego — fundamenty, ściany konstrukcyjne, stropy i dach, zgodnie z projektem i sztuką budowlaną.' ),
-		array( 'Kompleksowe roboty żelbetowe', 'Deskowanie, zbrojenie i betonowanie konstrukcji żelbetowych — fundamenty, ściany, słupy, stropy i schody.' ),
-		array( 'Roboty murarskie', 'Murowanie ścian konstrukcyjnych i działowych w technologiach dostosowanych do projektu i wymagań termicznych budynku.' ),
-		array( 'Ocieplenia elewacji i systemy ETICS', 'Docieplenia budynków w systemach ETICS, wykonywanie elewacji i poprawa efektywności energetycznej obiektu.' ),
-		array( 'Dachy i konstrukcje dachowe', 'Budowa więźb dachowych, układanie pokryć dachowych, obróbki blacharskie oraz renowacje i naprawy istniejących dachów.' ),
-		array( 'Prace wykończeniowe', 'Kompleksowe wykończenia wnętrz: podłogi, glazura, malowanie, zabudowy g-k, instalacje elektryczne i hydrauliczne — realizacja pod klucz z jednym punktem kontaktu.' ),
-		array( 'Zagospodarowanie terenu i infrastruktura', 'Utwardzenia, nawierzchnie, ogrodzenia oraz infrastruktura towarzysząca inwestycji — zagospodarowanie terenu wokół budynku.' ),
+		array( 'Budowa osiedli domów jednorodzinnych', 'Realizujemy budowę osiedli domów jednorodzinnych w stanie surowym otwartym, zamkniętym oraz pod klucz. Pełna koordynacja wszystkich etapów: fundamenty, konstrukcja, dach, instalacje, wykończenie.' ),
+		array( 'Budowa budynków wielorodzinnych', 'Generalne wykonawstwo budynków wielorodzinnych — od stanu zerowego, przez konstrukcję i instalacje, po odbiór końcowy z inwestorem.' ),
+		array( 'Budowa hal przemysłowych i magazynowych', 'Realizacja hal przemysłowych i magazynowych w konstrukcji stalowej lub żelbetowej, dopasowanej do potrzeb technologicznych inwestycji.' ),
+		array( 'Stan surowy otwarty i zamknięty', 'Wykonawstwo stanu surowego otwartego i zamkniętego — fundamenty, ściany konstrukcyjne, stropy i dach, zgodnie z projektem i sztuką budowlaną.' ),
+		array( 'Kompleksowe roboty żelbetowe', 'Deskowanie, zbrojenie i betonowanie konstrukcji żelbetowych — fundamenty, ściany, słupy, stropy i schody.' ),
+		array( 'Roboty murarskie', 'Murowanie ścian konstrukcyjnych i działowych w technologiach dostosowanych do projektu i wymagań termicznych budynku.' ),
+		array( 'Ocieplenia elewacji i systemy ETICS', 'Docieplenia budynków w systemach ETICS, wykonywanie elewacji i poprawa efektywności energetycznej obiektu.' ),
+		array( 'Dachy i konstrukcje dachowe', 'Budowa więźb dachowych, układanie pokryć dachowych, obróbki blacharskie oraz renowacje i naprawy istniejących dachów.' ),
+		array( 'Prace wykończeniowe', 'Kompleksowe wykończenia wnętrz: podłogi, glazura, malowanie, zabudowy g-k, instalacje elektryczne i hydrauliczne — realizacja pod klucz z jednym punktem kontaktu.' ),
+		array( 'Zagospodarowanie terenu i infrastruktura', 'Utwardzenia, nawierzchnie, ogrodzenia oraz infrastruktura towarzysząca inwestycji — zagospodarowanie terenu wokół budynku.' ),
 	);
 	?>
 
@@ -59,7 +59,7 @@ while ( have_posts() ) :
       <div class="card reveal">
         <div class="icon">1</div>
         <h3>Konsultacja</h3>
-        <p>Bezpłatne spotkanie i omówienie zakresu prac oraz oczekiwań.</p>
+        <p>Bezpłatne spotkanie i omówienie zakresu prac oraz oczekiwań.</p>
       </div>
       <div class="card reveal reveal-delay-1">
         <div class="icon">2</div>
@@ -69,12 +69,12 @@ while ( have_posts() ) :
       <div class="card reveal reveal-delay-2">
         <div class="icon">3</div>
         <h3>Realizacja</h3>
-        <p>Prace prowadzone zgodnie z harmonogramem, z bieżącym raportowaniem.</p>
+        <p>Prace prowadzone zgodnie z harmonogramem, z bieżącym raportowaniem.</p>
       </div>
       <div class="card reveal reveal-delay-3">
         <div class="icon">4</div>
         <h3>Odbiór</h3>
-        <p>Odbiór końcowy, dokumentacja i gwarancja na wykonane prace.</p>
+        <p>Odbiór końcowy, dokumentacja i gwarancja na wykonane prace.</p>
       </div>
     </div>
   </div>

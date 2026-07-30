@@ -33,7 +33,7 @@ function aurelis_setup() {
 add_action( 'after_setup_theme', 'aurelis_setup' );
 
 /**
- * Style i skrypty.
+ * Style i skrypty.
  */
 function aurelis_assets() {
 	wp_enqueue_style( 'aurelis-style', get_stylesheet_uri(), array(), AURELIS_VERSION );
@@ -43,7 +43,7 @@ add_action( 'wp_enqueue_scripts', 'aurelis_assets' );
 
 /**
  * Favicon — domyślny znak graficzny logo, ale jeśli ktoś ustawi własną
- * "Ikonę strony" w Ustawienia → Ogólne, WordPress obsłuży ją sam i tu
+ * "Ikonę strony" w Ustawienia → Ogólne, WordPress obsłuży ją sam i tu
  * nic nie robimy, żeby nie dublować znacznika <link rel="icon">.
  */
 function aurelis_favicon() {
@@ -55,8 +55,8 @@ function aurelis_favicon() {
 add_action( 'wp_head', 'aurelis_favicon' );
 
 /**
- * Meta description z fragmentu (excerpt) aktualnej strony — bez wtyczek SEO.
- * Uzupełnij "Fragment" w bocznym panelu edycji strony, aby ustawić własny opis.
+ * Meta description z fragmentu (excerpt) aktualnej strony — bez wtyczek SEO.
+ * Uzupełnij "Fragment" w bocznym panelu edycji strony, aby ustawić własny opis.
  */
 function aurelis_meta_description() {
 	$description = '';
@@ -73,7 +73,7 @@ function aurelis_meta_description() {
 add_action( 'wp_head', 'aurelis_meta_description', 1 );
 
 /**
- * Wyklucza Regulamin i Politykę prywatności z indeksowania (jak w wersji statycznej) —
+ * Wyklucza Regulamin i Politykę prywatności z indeksowania (jak w wersji statycznej) —
  * to treści prawne, nie mają wartości jako wyniki wyszukiwania.
  */
 function aurelis_noindex_legal_pages() {
@@ -84,12 +84,12 @@ function aurelis_noindex_legal_pages() {
 add_action( 'wp_head', 'aurelis_noindex_legal_pages', 1 );
 
 /**
- * Fallback menu, gdyby nikt jeszcze nie utworzył menu w Wygląd → Menu.
+ * Fallback menu, gdyby nikt jeszcze nie utworzył menu w Wygląd → Menu.
  */
 function aurelis_fallback_menu() {
 	$pages = array(
 		'/'                     => 'Strona główna',
-		'o-nas'                 => 'O nas',
+		'o-nas'                 => 'O nas',
 		'uslugi'                => 'Usługi',
 		'realizacje'            => 'Realizacje',
 		'praca'                 => 'Praca',
@@ -104,8 +104,8 @@ function aurelis_fallback_menu() {
 }
 
 /**
- * Adres URL strony po jej "slugu" (np. 'kontakt'), z bezpiecznym fallbackiem
- * do /{slug}/, gdyby strona o danym slugu nie została jeszcze utworzona.
+ * Adres URL strony po jej "slugu" (np. 'kontakt'), z bezpiecznym fallbackiem
+ * do /{slug}/, gdyby strona o danym slugu nie została jeszcze utworzona.
  */
 function aurelis_page_url( $slug ) {
 	$page = get_page_by_path( $slug );

@@ -8,7 +8,7 @@ get_header();
 
 while ( have_posts() ) :
 	the_post();
-	$subtitle = aurelis_hero_subtitle( get_the_ID(), 'Odpowiadamy w ciągu 24 godzin. Zadzwoń, napisz lub wypełnij formularz — przygotujemy bezpłatną wycenę.' );
+	$subtitle = aurelis_hero_subtitle( get_the_ID(), 'Odpowiadamy w ciągu 24 godzin. Zadzwoń, napisz lub wypełnij formularz — przygotujemy bezpłatną wycenę.' );
 
 	$sent = isset( $_GET['wyslano'] ) ? sanitize_text_field( wp_unslash( $_GET['wyslano'] ) ) : '';
 	?>
@@ -36,7 +36,7 @@ while ( have_posts() ) :
 
           <div class="contact-info-item">
             <div class="ic">Mail</div>
-            <div><strong><?php echo esc_html( aurelis_company( 'email' ) ); ?></strong><span>Odpowiadamy w ciągu 24h</span></div>
+            <div><strong><?php echo esc_html( aurelis_company( 'email' ) ); ?></strong><span>Odpowiadamy w ciągu 24h</span></div>
           </div>
 
           <div class="contact-info-item">
@@ -67,12 +67,12 @@ while ( have_posts() ) :
       <div class="reveal reveal-delay-1">
         <span class="eyebrow">Formularz kontaktowy</span>
         <h2>Napisz do nas</h2>
-        <p>Wypełnij poniższy formularz — oddzwonimy lub odpiszemy z wyceną.</p>
+        <p>Wypełnij poniższy formularz — oddzwonimy lub odpiszemy z wyceną.</p>
 
         <?php if ( 'blad' === $sent ) : ?>
-          <p class="form-status is-error">Ups, coś poszło nie tak — sprawdź, czy wszystkie wymagane pola są wypełnione, i spróbuj ponownie, albo zadzwoń bezpośrednio.</p>
+          <p class="form-status is-error">Ups, coś poszło nie tak — sprawdź, czy wszystkie wymagane pola są wypełnione, i spróbuj ponownie, albo zadzwoń bezpośrednio.</p>
         <?php elseif ( 'zbyt_duzy' === $sent ) : ?>
-          <p class="form-status is-error">Załącznik jest za duży (maks. 5 MB) — zmniejsz plik i spróbuj ponownie.</p>
+          <p class="form-status is-error">Załącznik jest za duży (maks. 5 MB) — zmniejsz plik i spróbuj ponownie.</p>
         <?php elseif ( 'zly_plik' === $sent ) : ?>
           <p class="form-status is-error">Nieobsługiwany format załącznika — dozwolone: PDF, JPG, PNG, DOC, DOCX.</p>
         <?php elseif ( '1' === $sent ) : ?>
@@ -87,7 +87,7 @@ while ( have_posts() ) :
             <input type="text" id="aurelis_website" name="aurelis_website" tabindex="-1" autocomplete="off">
           </div>
           <div>
-            <label for="name">Imię i nazwisko</label>
+            <label for="name">Imię i nazwisko</label>
             <input type="text" id="name" name="name" autocomplete="name" required placeholder="Jan Kowalski">
           </div>
           <div>
