@@ -11,16 +11,16 @@
         </div>
       </div>
       <div>
-        <h4>Nawigacja</h4>
+        <button type="button" class="footer-nav-toggle" aria-expanded="false" aria-controls="footerNavList">Nawigacja</button>
         <?php
         if ( has_nav_menu( 'primary' ) ) {
           wp_nav_menu( array(
             'theme_location' => 'primary',
             'container'      => false,
-            'items_wrap'     => '<ul>%3$s</ul>',
+            'items_wrap'     => '<ul id="footerNavList" class="footer-nav-list">%3$s</ul>',
           ) );
         } else {
-          aurelis_fallback_menu();
+          aurelis_fallback_menu( 'id="footerNavList" class="footer-nav-list"' );
         }
         ?>
       </div>

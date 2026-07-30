@@ -86,7 +86,7 @@ add_action( 'wp_head', 'aurelis_noindex_legal_pages', 1 );
 /**
  * Fallback menu, gdyby nikt jeszcze nie utworzył menu w Wygląd → Menu.
  */
-function aurelis_fallback_menu() {
+function aurelis_fallback_menu( $ul_attrs = '' ) {
 	$pages = array(
 		'/'                     => 'Strona główna',
 		'o-nas'                 => 'O nas',
@@ -95,7 +95,7 @@ function aurelis_fallback_menu() {
 		'praca'                 => 'Praca',
 		'kontakt'               => 'Kontakt',
 	);
-	echo '<ul>';
+	echo '<ul' . ( $ul_attrs ? ' ' . $ul_attrs : '' ) . '>';
 	foreach ( $pages as $slug => $label ) {
 		$url = ( '/' === $slug ) ? home_url( '/' ) : home_url( '/' . $slug . '/' );
 		echo '<li><a href="' . esc_url( $url ) . '">' . esc_html( $label ) . '</a></li>';

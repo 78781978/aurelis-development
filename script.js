@@ -15,6 +15,17 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  // Footer navigation accordion (mobile)
+  document.querySelectorAll('.footer-nav-toggle').forEach(function (btn) {
+    var list = document.getElementById(btn.getAttribute('aria-controls'));
+    if (!list) return;
+    btn.addEventListener('click', function () {
+      var expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      list.classList.toggle('is-open', !expanded);
+    });
+  });
+
   // Sticky header shadow on scroll
   var header = document.querySelector('.site-header');
   if (header) {
