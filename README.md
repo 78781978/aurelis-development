@@ -42,7 +42,6 @@ Zaktualizowano na dane rzeczywiste przekazane przez klienta:
 
 ## Dane, które NADAL są PRZYKŁADOWE — do podmiany
 
-- **KRS i REGON** — spółka nie przekazała jeszcze tych danych; `polityka-prywatnosci.html` jawnie to zaznacza.
 - Zdjęcie hero oraz 6 zdjęć realizacji — to nadal grafiki-placeholdery z podpisem, do podmiany na prawdziwe fotografie. Zdjęcie zespołu na stronie głównej (`zespol.png`) zostało już podmienione na przesłaną przez klienta fotografię.
 - Opinie klientów na stronie "Realizacje" — przykładowe, do zamiany na prawdziwe.
 - Statystyki (120+ projektów, 12 lat, 35 osób w zespole, 98% poleceń) — orientacyjne, do zaktualizowania realnymi danymi.
@@ -70,7 +69,7 @@ Każda podstrona ma teraz dedykowany `<meta name="keywords">` dopasowany do jej 
 
 - `regulamin.html` — zasady korzystania ze strony (definicje, zakres usług, formularz kontaktowy/rekrutacyjny, prawa autorskie, odpowiedzialność, reklamacje).
 - `polityka-prywatnosci.html` — polityka prywatności zgodna z RODO (administrator danych, cele i podstawy przetwarzania, prawa osób, których dane dotyczą) wraz z sekcją **Cookies** (`#cookies`) opisującą cookies niezbędne i analityczne.
-- Oba dokumenty mają jawnie oznaczone pola **NIP / KRS / REGON „do uzupełnienia"** — spółka nie przekazała jeszcze tych danych rejestrowych.
+- Oba dokumenty zawierają pełne dane rejestrowe spółki: NIP 675-154-51-05, KRS 0000618799, REGON 364479265.
 - **Baner zgody na cookies** — pojawia się na dole każdej podstrony przy pierwszej wizycie (przyciski „Akceptuj wszystkie" / „Tylko niezbędne"), zapamiętuje wybór w `localStorage` (klucz `aurelisCookieConsent`) i nie pokazuje się ponownie. Obecnie strona nie używa żadnych cookies analitycznych (np. Google Analytics) — mechanizm jest przygotowany na przyszłość, gdyby taka usługa została dodana.
 
 ## Jak podmienić zdjęcie
@@ -164,7 +163,6 @@ Przed wgraniem na WordPress przeprowadzono audyt całej strony (wersji statyczne
 - **`noindex` na Regulaminie i Polityce prywatności** dodane też do motywu WordPress (wcześniej było tylko w wersji statycznej).
 
 **Zostało do zrobienia (wymaga Twoich danych/decyzji):**
-- Uzupełnić **KRS i REGON** w Polityce prywatności i Regulaminie (obecnie oznaczone jako "do uzupełnienia") — dla Sp. z o.o. numer KRS jest obowiązkowy.
 - Dodać **prawdziwe linki do social media** (Facebook/Instagram/LinkedIn) w Personalizacji WordPress, jeśli firma je prowadzi — w przeciwnym razie ikony pozostaną ukryte.
 - Rozważyć dodanie **danych strukturalnych JSON-LD** (schema.org `GeneralContractor`) oraz **znaczników Open Graph** — nieobecne obecnie, a mają realny wpływ na widoczność w lokalnych wynikach Google i wygląd linków udostępnianych w social media. To wymaga wtyczki SEO (Yoast/Rank Math) lub dodatkowego kodu w motywie.
 - Po podpięciu docelowej domeny wygenerować nowy `robots.txt`/`sitemap.xml` pod WordPress (najprościej przez wtyczkę SEO) — obecne pliki są dla wersji statycznej i wskazują na stare adresy `.html`.
