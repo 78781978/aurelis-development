@@ -25,8 +25,8 @@
         ?>
       </div>
       <div>
-        <h4>Usługi</h4>
-        <ul>
+        <button type="button" class="footer-nav-toggle" aria-expanded="false" aria-controls="footerUslugiList">Usługi</button>
+        <ul id="footerUslugiList" class="footer-nav-list">
           <li><a href="<?php echo esc_url( aurelis_page_url( 'uslugi' ) ); ?>">Budowa domów i osiedli</a></li>
           <li><a href="<?php echo esc_url( aurelis_page_url( 'uslugi' ) ); ?>">Hale przemysłowe</a></li>
           <li><a href="<?php echo esc_url( aurelis_page_url( 'uslugi' ) ); ?>">Roboty żelbetowe</a></li>
@@ -34,8 +34,8 @@
         </ul>
       </div>
       <div>
-        <h4>Kontakt</h4>
-        <ul>
+        <button type="button" class="footer-nav-toggle" aria-expanded="false" aria-controls="footerKontaktList">Kontakt</button>
+        <ul id="footerKontaktList" class="footer-nav-list">
           <li><?php echo esc_html( aurelis_company( 'company_name' ) ); ?></li>
           <li><?php echo esc_html( aurelis_company( 'address_street' ) ); ?><br><?php echo esc_html( aurelis_company( 'address_city' ) ); ?></li>
           <li><?php echo esc_html( aurelis_company( 'phone_mobile' ) ); ?></li>

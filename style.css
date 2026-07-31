@@ -746,8 +746,8 @@ form.contact-form{ display:grid; gap:18px; }
   .footer-credit-link .shine-text{ color: var(--white); }
 }
 @keyframes footer-credit-shine{
-  0%{ background-position: 0% 0; }
-  100%{ background-position: 100% 0; }
+  0%{ background-position: 100% 0; }
+  100%{ background-position: 0% 0; }
 }
 @media (prefers-reduced-motion: reduce){
   .footer-credit-link .shine-text{ animation:none; background-position: 0 0; }
