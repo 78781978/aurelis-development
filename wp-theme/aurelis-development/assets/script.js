@@ -44,18 +44,23 @@ document.addEventListener('DOMContentLoaded', function () {
     yearEl.textContent = new Date().getFullYear();
   }
 
-  // Contact form (demo — bez backendu)
+  // Formularz kontaktowy — na statycznej wersji demo (bez backendu, action="#")
+  // pokazujemy komunikat zastępczy; na WordPressie formularz ma prawdziwy
+  // backend (action wskazuje admin-post.php), więc wysyłamy go normalnie.
   var form = document.querySelector('.contact-form');
   if (form) {
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var status = form.querySelector('.form-status');
-      if (status) {
-        status.textContent = 'Dziękujemy! To formularz demonstracyjny — podłącz go do np. Formspree, EmailJS lub własnego backendu, aby zgłoszenia trafiały na maila.';
-        status.style.color = '#B8892A';
-      }
-      form.reset();
-    });
+    var formAction = form.getAttribute('action') || '';
+    if (formAction.indexOf('admin-post.php') === -1) {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var status = form.querySelector('.form-status');
+        if (status) {
+          status.textContent = 'Dziękujemy! To formularz demonstracyjny — podłącz go do np. Formspree, EmailJS lub własnego backendu, aby zgłoszenia trafiały na maila.';
+          status.style.color = '#B8892A';
+        }
+        form.reset();
+      });
+    }
   }
 
   // Scroll-reveal animations
