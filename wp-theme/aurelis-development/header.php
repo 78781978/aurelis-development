@@ -66,8 +66,8 @@
         <?php the_custom_logo(); ?>
       <?php else : ?>
         <picture>
-          <source srcset="<?php echo esc_url( AURELIS_URI . '/assets/logo.webp' ); ?>" type="image/webp">
-          <img src="<?php echo esc_url( AURELIS_URI . '/assets/logo.png' ); ?>" alt="<?php bloginfo( 'name' ); ?>" width="733" height="500">
+          <source srcset="<?php echo esc_url( AURELIS_URI . '/assets/Logoaurelis.webp' ); ?>" type="image/webp">
+          <img src="<?php echo esc_url( AURELIS_URI . '/assets/Logoaurelis.png' ); ?>" alt="<?php bloginfo( 'name' ); ?>" width="733" height="500">
         </picture>
       <?php endif; ?>
     </a>
