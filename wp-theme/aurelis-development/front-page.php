@@ -134,7 +134,7 @@ while ( have_posts() ) :
         <?php else : ?>
           <picture>
             <source srcset="<?php echo esc_url( AURELIS_URI . '/assets/zespol.webp' ); ?>" type="image/webp">
-            <img src="<?php echo esc_url( AURELIS_URI . '/assets/zespol.png' ); ?>" alt="Zespół Aurelis Development">
+            <img src="<?php echo esc_url( AURELIS_URI . '/assets/zespol.png' ); ?>" alt="Zespół Aurelis Development" width="536" height="603">
           </picture>
         <?php endif; ?>
       </div>

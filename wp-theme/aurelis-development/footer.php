@@ -4,7 +4,7 @@
   <div class="container">
     <div class="footer-grid">
       <div>
-        <div class="footer-logo"><img src="<?php echo esc_url( AURELIS_URI . '/assets/logo.svg' ); ?>" alt="<?php bloginfo( 'name' ); ?>"></div>
+        <div class="footer-logo"><img src="<?php echo esc_url( AURELIS_URI . '/assets/logo.svg' ); ?>" alt="<?php bloginfo( 'name' ); ?>" width="216" height="144"></div>
         <p><?php echo esc_html( aurelis_company( 'footer_about' ) ); ?></p>
         <div class="social-links">
           <?php if ( aurelis_company( 'social_facebook' ) ) : ?><a href="<?php echo esc_url( aurelis_company( 'social_facebook' ) ); ?>" aria-label="Facebook" target="_blank" rel="noopener">FB</a><?php endif; ?>

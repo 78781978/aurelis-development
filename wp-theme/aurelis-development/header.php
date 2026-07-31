@@ -4,7 +4,11 @@
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="preload" href="<?php echo esc_url( AURELIS_URI . '/assets/fonts/montserrat-500-700-latin-ext.woff2' ); ?>" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="<?php echo esc_url( AURELIS_URI . '/assets/fonts/montserrat-500-700-latin.woff2' ); ?>" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="<?php echo esc_url( AURELIS_URI . '/assets/fonts/poppins-400-latin-ext.woff2' ); ?>" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="<?php echo esc_url( AURELIS_URI . '/assets/fonts/poppins-400-latin.woff2' ); ?>" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="<?php echo esc_url( AURELIS_URI . '/assets/fonts/poppins-600-latin-ext.woff2' ); ?>" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="<?php echo esc_url( AURELIS_URI . '/assets/fonts/poppins-600-latin.woff2' ); ?>" as="font" type="font/woff2" crossorigin>
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
@@ -61,7 +65,7 @@
       <?php if ( has_custom_logo() ) : ?>
         <?php the_custom_logo(); ?>
       <?php else : ?>
-        <img src="<?php echo esc_url( AURELIS_URI . '/assets/logo.svg' ); ?>" alt="<?php bloginfo( 'name' ); ?>">
+        <img src="<?php echo esc_url( AURELIS_URI . '/assets/logo.svg' ); ?>" alt="<?php bloginfo( 'name' ); ?>" width="216" height="144">
       <?php endif; ?>
     </a>
     <nav class="main-nav" id="mainNav">

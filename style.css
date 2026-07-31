@@ -814,7 +814,7 @@ form.contact-form{ display:grid; gap:18px; }
   text-align: center;
 }
 .footer-grid h4{ color: var(--white); font-size: 1.1rem; margin-bottom:20px; }
-.footer-grid p{ font-size: 0.98rem; line-height: 1.7; }
+.footer-grid p{ font-size: 0.98rem; line-height: 1.7; color: var(--gray-light); }
 .footer-grid ul li{ margin-bottom: 12px; font-size: 0.98rem; }
 .footer-grid ul li a:hover{ color: var(--accent-light); }
 .footer-nav-toggle{

@@ -33,6 +33,20 @@ function aurelis_setup() {
 add_action( 'after_setup_theme', 'aurelis_setup' );
 
 /**
+ * Logo w nagłówku wyświetla się maks. ok. 216px szerokości, ale WordPress
+ * domyślnie zakłada, że obrazek może zajmować całą szerokość ekranu
+ * (sizes="100vw") i pobiera przez to zbyt duży wariant z biblioteki mediów.
+ * Podajemy prawdziwy, mały rozmiar, żeby przeglądarka wybrała mniejszy plik.
+ */
+function aurelis_custom_logo_sizes( $attr ) {
+	if ( isset( $attr['class'] ) && false !== strpos( $attr['class'], 'custom-logo' ) ) {
+		$attr['sizes'] = '216px';
+	}
+	return $attr;
+}
+add_filter( 'wp_get_attachment_image_attributes', 'aurelis_custom_logo_sizes' );
+
+/**
  * Style i skrypty.
  */
 function aurelis_assets() {
