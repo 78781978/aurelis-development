@@ -67,7 +67,7 @@
       <?php else : ?>
         <picture>
           <source srcset="<?php echo esc_url( AURELIS_URI . '/assets/Logoaurelis.webp' ); ?>" type="image/webp">
-          <img src="<?php echo esc_url( AURELIS_URI . '/assets/Logoaurelis.png' ); ?>" alt="<?php bloginfo( 'name' ); ?>" width="733" height="500">
+          <img src="<?php echo esc_url( AURELIS_URI . '/assets/Logoaurelis.png' ); ?>" alt="<?php bloginfo( 'name' ); ?>">
         </picture>
       <?php endif; ?>
     </a>
