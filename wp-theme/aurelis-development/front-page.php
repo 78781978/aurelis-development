@@ -129,7 +129,14 @@ while ( have_posts() ) :
         <a href="<?php echo esc_url( aurelis_page_url( 'o-nas' ) ); ?>" class="btn btn--dark">Poznaj naszą firmę</a>
       </div>
       <div class="reveal reveal-delay-1">
-        <img src="<?php echo esc_url( aurelis_company( 'team_photo' ) ? aurelis_company( 'team_photo' ) : AURELIS_URI . '/assets/zespol.png' ); ?>" alt="Zespół Aurelis Development">
+        <?php if ( aurelis_company( 'team_photo' ) ) : ?>
+          <img src="<?php echo esc_url( aurelis_company( 'team_photo' ) ); ?>" alt="Zespół Aurelis Development">
+        <?php else : ?>
+          <picture>
+            <source srcset="<?php echo esc_url( AURELIS_URI . '/assets/zespol.webp' ); ?>" type="image/webp">
+            <img src="<?php echo esc_url( AURELIS_URI . '/assets/zespol.png' ); ?>" alt="Zespół Aurelis Development">
+          </picture>
+        <?php endif; ?>
       </div>
     </div>
   </div>
