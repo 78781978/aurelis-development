@@ -55,10 +55,10 @@ function aurelis_favicon() {
 add_action( 'wp_head', 'aurelis_favicon' );
 
 /**
- * Meta description z fragmentu (excerpt) aktualnej strony — bez wtyczek SEO.
- * Uzupełnij "Fragment" w bocznym panelu edycji strony, aby ustawić własny opis.
+ * Skrót opisu aktualnej strony — z fragmentu (excerpt), z fallbackiem do
+ * opisu strony w Ustawieniach. Używane przez meta description i Open Graph.
  */
-function aurelis_meta_description() {
+function aurelis_get_meta_description() {
 	$description = '';
 	if ( is_singular() ) {
 		$description = get_the_excerpt();
@@ -66,14 +66,76 @@ function aurelis_meta_description() {
 	if ( ! $description ) {
 		$description = get_bloginfo( 'description' );
 	}
+	return wp_strip_all_tags( $description );
+}
+
+/**
+ * Meta description z fragmentu (excerpt) aktualnej strony — bez wtyczek SEO.
+ * Uzupełnij "Fragment" w bocznym panelu edycji strony, aby ustawić własny opis.
+ */
+function aurelis_meta_description() {
+	$description = aurelis_get_meta_description();
 	if ( $description ) {
-		echo '<meta name="description" content="' . esc_attr( wp_strip_all_tags( $description ) ) . '">' . "\n";
+		echo '<meta name="description" content="' . esc_attr( $description ) . '">' . "\n";
 	}
 }
 add_action( 'wp_head', 'aurelis_meta_description', 1 );
 
 /**
- * Wyklucza Regulamin i Politykę prywatności z indeksowania (jak w wersji statycznej) —
+ * Znaczniki Open Graph / Twitter Card — bez wtyczek SEO. WordPress dodaje
+ * canonical URL sam (rdzeń), więc tu tylko OG/Twitter.
+ */
+function aurelis_opengraph_tags() {
+	$title       = wp_get_document_title();
+	$description = aurelis_get_meta_description();
+	$url         = is_singular() ? get_permalink() : home_url( add_query_arg( array(), $GLOBALS['wp']->request ) );
+	$image       = AURELIS_URI . '/assets/zespol.png';
+
+	echo '<meta property="og:type" content="website">' . "\n";
+	echo '<meta property="og:site_name" content="' . esc_attr( get_bloginfo( 'name' ) ) . '">' . "\n";
+	echo '<meta property="og:locale" content="pl_PL">' . "\n";
+	echo '<meta property="og:title" content="' . esc_attr( $title ) . '">' . "\n";
+	if ( $description ) {
+		echo '<meta property="og:description" content="' . esc_attr( $description ) . '">' . "\n";
+	}
+	echo '<meta property="og:url" content="' . esc_url( $url ) . '">' . "\n";
+	echo '<meta property="og:image" content="' . esc_url( $image ) . '">' . "\n";
+	echo '<meta name="twitter:card" content="summary_large_image">' . "\n";
+}
+add_action( 'wp_head', 'aurelis_opengraph_tags' );
+
+/**
+ * Dane strukturalne JSON-LD (schema.org GeneralContractor) — dane firmy
+ * z Personalizacji, żeby zawsze były aktualne bez edycji kodu.
+ */
+function aurelis_structured_data() {
+	$data = array(
+		'@context'   => 'https://schema.org',
+		'@type'      => 'GeneralContractor',
+		'name'       => aurelis_company( 'company_name' ),
+		'image'      => AURELIS_URI . '/assets/zespol.png',
+		'url'        => home_url( '/' ),
+		'telephone'  => aurelis_company( 'phone_mobile' ),
+		'email'      => aurelis_company( 'email' ),
+		'address'    => array(
+			'@type'           => 'PostalAddress',
+			'streetAddress'   => aurelis_company( 'address_street' ),
+			'addressLocality' => 'Michałowice',
+			'postalCode'      => '32-091',
+			'addressCountry'  => 'PL',
+		),
+		'areaServed' => 'Małopolska',
+		'priceRange' => '$$',
+	);
+	if ( aurelis_company( 'social_facebook' ) ) {
+		$data['sameAs'] = array( aurelis_company( 'social_facebook' ) );
+	}
+	echo '<script type="application/ld+json">' . wp_json_encode( $data, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES ) . '</script>' . "\n";
+}
+add_action( 'wp_head', 'aurelis_structured_data' );
+
+/**
+ * Wyklucza Regulamin i Politykę prywatności z indeksowania (jak w wersji statycznej) —
  * to treści prawne, nie mają wartości jako wyniki wyszukiwania.
  */
 function aurelis_noindex_legal_pages() {

@@ -27,7 +27,7 @@ while ( have_posts() ) :
 
       <div class="reveal">
         <div class="contact-info-card">
-          <h3>Dane kontaktowe</h3>
+          <h2>Dane kontaktowe</h2>
 
           <div class="contact-info-item">
             <div class="ic">Tel.</div>

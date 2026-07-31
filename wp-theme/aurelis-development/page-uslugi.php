@@ -33,6 +33,10 @@ while ( have_posts() ) :
 
 <section class="section">
   <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Zakres usług</span>
+      <h2>Pełna lista usług generalnego wykonawstwa</h2>
+    </div>
     <?php foreach ( $services as $i => $service ) : ?>
     <div class="service-row reveal">
       <div class="service-num"><?php echo esc_html( sprintf( '%02d', $i + 1 ) ); ?></div>
