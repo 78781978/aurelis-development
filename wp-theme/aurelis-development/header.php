@@ -65,7 +65,10 @@
       <?php if ( has_custom_logo() ) : ?>
         <?php the_custom_logo(); ?>
       <?php else : ?>
-        <img src="<?php echo esc_url( AURELIS_URI . '/assets/logo.svg' ); ?>" alt="<?php bloginfo( 'name' ); ?>" width="216" height="144">
+        <picture>
+          <source srcset="<?php echo esc_url( AURELIS_URI . '/assets/logo.webp' ); ?>" type="image/webp">
+          <img src="<?php echo esc_url( AURELIS_URI . '/assets/logo.png' ); ?>" alt="<?php bloginfo( 'name' ); ?>" width="733" height="500">
+        </picture>
       <?php endif; ?>
     </a>
     <nav class="main-nav" id="mainNav">
