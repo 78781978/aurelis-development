@@ -810,7 +810,7 @@ form.contact-form{ display:grid; gap:18px; }
   border-color: var(--accent);
 }
 .contact-form input[type="file"]{ padding: 9px 12px; cursor:pointer; }
-.form-note{ font-size: 0.82rem; color: var(--gray); margin-top: -6px; }
+.form-note{ font-size: 0.82rem; color: var(--gray); margin-top: 6px; }
 .contact-form .form-status{ font-weight:600; }
 .contact-form .form-status.is-success{ color: var(--accent-dark); }
 .contact-form .form-status.is-error{ color: #B3261E; }
