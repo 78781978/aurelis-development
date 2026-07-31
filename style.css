@@ -869,6 +869,7 @@ form.contact-form{ display:grid; gap:18px; }
   color: var(--white);
   text-decoration:none;
   letter-spacing: 0.5px;
+  white-space: nowrap;
 }
 .footer-bottom .footer-credit-link:hover{ text-decoration: underline; }
 .footer-credit-link .shine-text{
