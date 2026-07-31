@@ -31,12 +31,12 @@ while ( have_posts() ) :
 
           <div class="contact-info-item">
             <div class="ic">Tel.</div>
-            <div><strong><?php echo esc_html( aurelis_company( 'phone_mobile' ) ); ?></strong><strong><?php echo esc_html( aurelis_company( 'phone_landline' ) ); ?></strong><span><?php echo esc_html( aurelis_company( 'hours' ) ); ?></span></div>
+            <div><strong><a href="<?php echo esc_url( aurelis_tel_href( aurelis_company( 'phone_mobile' ) ) ); ?>"><?php echo esc_html( aurelis_company( 'phone_mobile' ) ); ?></a></strong><strong><a href="<?php echo esc_url( aurelis_tel_href( aurelis_company( 'phone_landline' ) ) ); ?>"><?php echo esc_html( aurelis_company( 'phone_landline' ) ); ?></a></strong><span><?php echo esc_html( aurelis_company( 'hours' ) ); ?></span></div>
           </div>
 
           <div class="contact-info-item">
             <div class="ic">Mail</div>
-            <div><strong><?php echo esc_html( aurelis_company( 'email' ) ); ?></strong><span>Odpowiadamy w ciągu 24h</span></div>
+            <div><strong><a href="mailto:<?php echo esc_attr( aurelis_company( 'email' ) ); ?>"><?php echo esc_html( aurelis_company( 'email' ) ); ?></a></strong><span>Odpowiadamy w ciągu 24h</span></div>
           </div>
 
           <div class="contact-info-item">

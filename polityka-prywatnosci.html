@@ -50,6 +50,50 @@
 <body>
 <a class="skip-link" href="#main-content">Przejdź do treści</a>
 
+<button type="button" class="a11y-toggle" id="a11yToggle" aria-haspopup="dialog" aria-expanded="false" aria-controls="a11yPanel" aria-label="Ustawienia dostępności (WCAG)">
+  <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+    <circle cx="12" cy="12" r="10"></circle>
+    <circle cx="12" cy="7" r="1.5" fill="currentColor" stroke="none"></circle>
+    <path d="M6.5 10c1.9.9 3.7 1.3 5.5 1.3s3.6-.4 5.5-1.3M12 11.3v4.2M9.5 19l2.5-4 2.5 4"></path>
+  </svg>
+</button>
+
+<dialog class="a11y-panel" id="a11yPanel" aria-labelledby="a11yPanelTitle">
+  <div class="a11y-panel-inner">
+    <div class="a11y-panel-head">
+      <h2 id="a11yPanelTitle">Ustawienia dostępności</h2>
+      <button type="button" class="a11y-panel-close" id="a11yCloseBtn" aria-label="Zamknij ustawienia dostępności">&times;</button>
+    </div>
+    <p>Strona jest dostosowana do wytycznych WCAG 2.2. Możesz dodatkowo zmienić poniższe ustawienia wyświetlania.</p>
+
+    <div class="a11y-row">
+      <span>Rozmiar tekstu</span>
+      <div class="a11y-btn-group">
+        <button type="button" id="a11yFontDec" aria-label="Zmniejsz rozmiar tekstu">A-</button>
+        <button type="button" id="a11yFontReset" aria-label="Domyślny rozmiar tekstu">A</button>
+        <button type="button" id="a11yFontInc" aria-label="Zwiększ rozmiar tekstu">A+</button>
+      </div>
+    </div>
+
+    <div class="a11y-row a11y-row--toggle">
+      <label for="a11yContrast">Wysoki kontrast</label>
+      <input type="checkbox" id="a11yContrast">
+    </div>
+
+    <div class="a11y-row a11y-row--toggle">
+      <label for="a11yUnderline">Podkreślone linki</label>
+      <input type="checkbox" id="a11yUnderline">
+    </div>
+
+    <div class="a11y-row a11y-row--toggle">
+      <label for="a11yNoMotion">Wyłącz animacje</label>
+      <input type="checkbox" id="a11yNoMotion">
+    </div>
+
+    <button type="button" class="btn btn--outline btn--sm" id="a11yResetBtn">Przywróć ustawienia domyślne</button>
+  </div>
+</dialog>
+
 <header class="site-header">
   <div class="container">
     <a href="index.html" class="logo"><img src="logo.svg" alt="Aurelis Development"></a>
@@ -64,7 +108,7 @@
       </ul>
     </nav>
     <div class="header-cta">
-      <div class="header-phone">Zadzwoń: <span>+48 512 133 322</span></div>
+      <div class="header-phone">Zadzwoń: <a href="tel:+48512133322">+48 512 133 322</a></div>
       <a href="kontakt.html" class="btn btn--dark">Bezpłatna wycena</a>
       <button class="nav-toggle" aria-label="Otwórz menu" aria-controls="mainNav" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
@@ -87,7 +131,7 @@
       <p class="legal-updated">Ostatnia aktualizacja: 17 lipca 2026 r.</p>
 
       <h2>1. Administrator danych osobowych</h2>
-      <p>Administratorem danych osobowych zbieranych za pośrednictwem niniejszej strony internetowej jest <strong>Aurelis Development Sp. z o.o.</strong>, ul. Warszawska 53, 32-091 Michałowice, e-mail: <strong>biuro@aurelis.com.pl</strong>, NIP: <strong>675-154-51-05</strong>, KRS: <strong>0000618799</strong>, REGON: <strong>364479265</strong> (dalej: „Administrator").</p>
+      <p>Administratorem danych osobowych zbieranych za pośrednictwem niniejszej strony internetowej jest <strong>Aurelis Development Sp. z o.o.</strong>, ul. Warszawska 53, 32-091 Michałowice, e-mail: <strong><a href="mailto:biuro@aurelis.com.pl">biuro@aurelis.com.pl</a></strong>, NIP: <strong>675-154-51-05</strong>, KRS: <strong>0000618799</strong>, REGON: <strong>364479265</strong> (dalej: „Administrator").</p>
 
       <h2>2. Jakie dane przetwarzamy i w jakim celu</h2>
       <p>W związku z korzystaniem ze strony możemy przetwarzać następujące dane:</p>
@@ -123,7 +167,7 @@
         <li>cofnięcia zgody w dowolnym momencie, bez wpływu na zgodność z prawem przetwarzania dokonanego przed jej cofnięciem,</li>
         <li>wniesienia skargi do Prezesa Urzędu Ochrony Danych Osobowych (UODO).</li>
       </ul>
-      <p>W celu realizacji powyższych praw prosimy o kontakt na adres: <strong>biuro@aurelis.com.pl</strong>.</p>
+      <p>W celu realizacji powyższych praw prosimy o kontakt na adres: <strong><a href="mailto:biuro@aurelis.com.pl">biuro@aurelis.com.pl</a></strong>.</p>
 
       <h2 id="cookies">7. Pliki cookies</h2>
       <p>Strona wykorzystuje pliki cookies (ciasteczka), czyli niewielkie pliki tekstowe zapisywane na urządzeniu użytkownika.</p>
@@ -140,7 +184,7 @@
       <p>Administrator zastrzega sobie prawo do wprowadzania zmian w niniejszej polityce prywatności. Aktualna wersja jest zawsze dostępna na tej podstronie wraz z datą ostatniej aktualizacji.</p>
 
       <h2>10. Kontakt</h2>
-      <p>W sprawach związanych z ochroną danych osobowych prosimy o kontakt: <strong>biuro@aurelis.com.pl</strong> lub pisemnie na adres: Aurelis Development Sp. z o.o., ul. Warszawska 53, 32-091 Michałowice.</p>
+      <p>W sprawach związanych z ochroną danych osobowych prosimy o kontakt: <strong><a href="mailto:biuro@aurelis.com.pl">biuro@aurelis.com.pl</a></strong> lub pisemnie na adres: Aurelis Development Sp. z o.o., ul. Warszawska 53, 32-091 Michałowice.</p>
     </div>
   </div>
 </section>
@@ -182,9 +226,9 @@
         <ul id="footerKontaktList" class="footer-nav-list">
           <li>Aurelis Development Sp. z o.o.</li>
           <li>ul. Warszawska 53<br>32-091 Michałowice</li>
-          <li>+48 512 133 322</li>
-          <li>+48 12 373 99 89</li>
-          <li>biuro@aurelis.com.pl</li>
+          <li><a href="tel:+48512133322">+48 512 133 322</a></li>
+          <li><a href="tel:+48123739989">+48 12 373 99 89</a></li>
+          <li><a href="mailto:biuro@aurelis.com.pl">biuro@aurelis.com.pl</a></li>
         </ul>
       </div>
     </div>

@@ -166,6 +166,14 @@ function aurelis_fallback_menu( $ul_attrs = '' ) {
 }
 
 /**
+ * Zamienia numer telefonu (wpisany w Personalizacji w dowolnym formacie,
+ * np. "+48 512 133 322") na bezpieczny link "tel:" — same cyfry i "+".
+ */
+function aurelis_tel_href( $phone ) {
+	return 'tel:' . preg_replace( '/[^0-9+]/', '', $phone );
+}
+
+/**
  * Adres URL strony po jej "slugu" (np. 'kontakt'), z bezpiecznym fallbackiem
  * do /{slug}/, gdyby strona o danym slugu nie została jeszcze utworzona.
  */

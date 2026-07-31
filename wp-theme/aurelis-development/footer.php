@@ -38,9 +38,9 @@
         <ul id="footerKontaktList" class="footer-nav-list">
           <li><?php echo esc_html( aurelis_company( 'company_name' ) ); ?></li>
           <li><?php echo esc_html( aurelis_company( 'address_street' ) ); ?><br><?php echo esc_html( aurelis_company( 'address_city' ) ); ?></li>
-          <li><?php echo esc_html( aurelis_company( 'phone_mobile' ) ); ?></li>
-          <li><?php echo esc_html( aurelis_company( 'phone_landline' ) ); ?></li>
-          <li><?php echo esc_html( aurelis_company( 'email' ) ); ?></li>
+          <li><a href="<?php echo esc_url( aurelis_tel_href( aurelis_company( 'phone_mobile' ) ) ); ?>"><?php echo esc_html( aurelis_company( 'phone_mobile' ) ); ?></a></li>
+          <li><a href="<?php echo esc_url( aurelis_tel_href( aurelis_company( 'phone_landline' ) ) ); ?>"><?php echo esc_html( aurelis_company( 'phone_landline' ) ); ?></a></li>
+          <li><a href="mailto:<?php echo esc_attr( aurelis_company( 'email' ) ); ?>"><?php echo esc_html( aurelis_company( 'email' ) ); ?></a></li>
         </ul>
       </div>
     </div>

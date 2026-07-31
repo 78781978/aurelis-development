@@ -171,4 +171,105 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     }
   }
+
+  // Widget dostępności (WCAG 2.2) — rozmiar tekstu, kontrast, podkreślenia, animacje
+  var a11yToggle = document.getElementById('a11yToggle');
+  var a11yPanel = document.getElementById('a11yPanel');
+  if (a11yToggle && a11yPanel) {
+    var A11Y_KEY = 'aurelisA11yPrefs';
+    var html = document.documentElement;
+
+    function getA11yPrefs() {
+      var raw = localStorage.getItem(A11Y_KEY);
+      if (!raw) return { fontLevel: 0, contrast: false, underline: false, noMotion: false };
+      try {
+        var parsed = JSON.parse(raw);
+        return {
+          fontLevel: parsed.fontLevel || 0,
+          contrast: !!parsed.contrast,
+          underline: !!parsed.underline,
+          noMotion: !!parsed.noMotion
+        };
+      } catch (e) {
+        return { fontLevel: 0, contrast: false, underline: false, noMotion: false };
+      }
+    }
+    function saveA11yPrefs(prefs) {
+      localStorage.setItem(A11Y_KEY, JSON.stringify(prefs));
+    }
+    function applyA11yPrefs(prefs) {
+      html.classList.remove('a11y-font-1', 'a11y-font-2');
+      if (prefs.fontLevel === 1) html.classList.add('a11y-font-1');
+      if (prefs.fontLevel === 2) html.classList.add('a11y-font-2');
+      html.classList.toggle('a11y-contrast', prefs.contrast);
+      html.classList.toggle('a11y-underline-links', prefs.underline);
+      html.classList.toggle('a11y-no-motion', prefs.noMotion);
+
+      var contrastCheckbox = document.getElementById('a11yContrast');
+      var underlineCheckbox = document.getElementById('a11yUnderline');
+      var noMotionCheckbox = document.getElementById('a11yNoMotion');
+      if (contrastCheckbox) contrastCheckbox.checked = prefs.contrast;
+      if (underlineCheckbox) underlineCheckbox.checked = prefs.underline;
+      if (noMotionCheckbox) noMotionCheckbox.checked = prefs.noMotion;
+    }
+
+    var a11yPrefs = getA11yPrefs();
+    applyA11yPrefs(a11yPrefs);
+
+    a11yToggle.addEventListener('click', function () {
+      a11yPanel.showModal();
+      a11yToggle.setAttribute('aria-expanded', 'true');
+    });
+    a11yPanel.addEventListener('close', function () {
+      a11yToggle.setAttribute('aria-expanded', 'false');
+    });
+
+    var a11yCloseBtn = document.getElementById('a11yCloseBtn');
+    if (a11yCloseBtn) a11yCloseBtn.addEventListener('click', function () { a11yPanel.close(); });
+
+    var a11yFontInc = document.getElementById('a11yFontInc');
+    var a11yFontDec = document.getElementById('a11yFontDec');
+    var a11yFontReset = document.getElementById('a11yFontReset');
+    if (a11yFontInc) a11yFontInc.addEventListener('click', function () {
+      a11yPrefs.fontLevel = Math.min(2, a11yPrefs.fontLevel + 1);
+      applyA11yPrefs(a11yPrefs);
+      saveA11yPrefs(a11yPrefs);
+    });
+    if (a11yFontDec) a11yFontDec.addEventListener('click', function () {
+      a11yPrefs.fontLevel = Math.max(0, a11yPrefs.fontLevel - 1);
+      applyA11yPrefs(a11yPrefs);
+      saveA11yPrefs(a11yPrefs);
+    });
+    if (a11yFontReset) a11yFontReset.addEventListener('click', function () {
+      a11yPrefs.fontLevel = 0;
+      applyA11yPrefs(a11yPrefs);
+      saveA11yPrefs(a11yPrefs);
+    });
+
+    var a11yContrast = document.getElementById('a11yContrast');
+    var a11yUnderline = document.getElementById('a11yUnderline');
+    var a11yNoMotion = document.getElementById('a11yNoMotion');
+    if (a11yContrast) a11yContrast.addEventListener('change', function () {
+      a11yPrefs.contrast = a11yContrast.checked;
+      applyA11yPrefs(a11yPrefs);
+      saveA11yPrefs(a11yPrefs);
+    });
+    if (a11yUnderline) a11yUnderline.addEventListener('change', function () {
+      a11yPrefs.underline = a11yUnderline.checked;
+      applyA11yPrefs(a11yPrefs);
+      saveA11yPrefs(a11yPrefs);
+    });
+    if (a11yNoMotion) a11yNoMotion.addEventListener('change', function () {
+      a11yPrefs.noMotion = a11yNoMotion.checked;
+      applyA11yPrefs(a11yPrefs);
+      saveA11yPrefs(a11yPrefs);
+    });
+
+    var a11yResetBtn = document.getElementById('a11yResetBtn');
+    if (a11yResetBtn) a11yResetBtn.addEventListener('click', function () {
+      a11yPrefs = { fontLevel: 0, contrast: false, underline: false, noMotion: false };
+      applyA11yPrefs(a11yPrefs);
+      saveA11yPrefs(a11yPrefs);
+    });
+  }
 });
