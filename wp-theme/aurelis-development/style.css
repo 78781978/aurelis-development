@@ -862,9 +862,9 @@ form.contact-form{ display:grid; gap:18px; }
   display:flex;
   justify-content:center;
   align-items:center;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   flex-wrap:wrap;
-  gap: 16px;
+  gap: 12px 14px;
   text-align:center;
 }
 .footer-bottom a{ color: var(--gray-light); }
