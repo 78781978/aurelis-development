@@ -122,8 +122,17 @@ document.addEventListener('DOMContentLoaded', function () {
     function saveConsent(analytics) {
       localStorage.setItem(CONSENT_KEY, JSON.stringify({ necessary: true, analytics: !!analytics }));
     }
+    function updateA11yToggleOffset() {
+      if (cookieBanner.classList.contains('is-visible')) {
+        document.documentElement.style.setProperty('--cookie-banner-h', cookieBanner.offsetHeight + 'px');
+        document.documentElement.classList.add('cookie-banner-visible');
+      } else {
+        document.documentElement.classList.remove('cookie-banner-visible');
+      }
+    }
     function hideBanner() {
       cookieBanner.classList.remove('is-visible');
+      updateA11yToggleOffset();
     }
     function closeModal() {
       if (cookieModal && cookieModal.open) cookieModal.close();
@@ -137,8 +146,12 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     if (!getConsent()) {
-      setTimeout(function () { cookieBanner.classList.add('is-visible'); }, 400);
+      setTimeout(function () {
+        cookieBanner.classList.add('is-visible');
+        updateA11yToggleOffset();
+      }, 400);
     }
+    window.addEventListener('resize', updateA11yToggleOffset);
 
     var acceptBtn = document.getElementById('cookieAcceptBtn');
     var rejectBtn = document.getElementById('cookieRejectBtn');
