@@ -240,6 +240,59 @@ p{ margin: 0 0 16px; color: var(--gray); }
 .cookie-banner a{ color: var(--accent-light); text-decoration: underline; }
 .cookie-banner-actions{ display:flex; gap:12px; flex-wrap:wrap; flex-shrink:0; }
 
+/* ===== Cookie "Dostosuj" — okno ustawień szczegółowych ===== */
+.cookie-modal{
+  border: none;
+  border-radius: 14px;
+  padding: 0;
+  max-width: 560px;
+  width: calc(100% - 40px);
+  box-shadow: var(--shadow);
+}
+.cookie-modal::backdrop{
+  background: rgba(15,22,28,0.6);
+}
+.cookie-modal-inner{ padding: 32px; }
+.cookie-modal-inner h2{ margin: 0 0 12px; font-size: 1.3rem; }
+.cookie-modal-inner > p{ margin: 0 0 24px; color: var(--gray); font-size: 0.92rem; }
+.cookie-modal-inner p{ color: var(--gray); font-size: 0.92rem; }
+.cookie-modal-inner a{ color: var(--accent-dark); }
+.cookie-option{
+  border: 1px solid rgba(22,34,44,0.12);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  margin-bottom: 14px;
+}
+.cookie-option-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 16px;
+  font-weight: 600;
+  color: var(--dark);
+}
+.cookie-option-head input[type="checkbox"]{ width: 20px; height: 20px; flex-shrink:0; accent-color: var(--accent); }
+.cookie-option p{ margin: 6px 0 0; }
+.cookie-modal-actions{
+  display:flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+
+/* ===== Stopka: link "Ustawienia cookies" — wygląda jak inne linki stopki ===== */
+.footer-bottom button.footer-settings-link{
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: var(--gray-light);
+  cursor: pointer;
+  min-height: 24px;
+}
+.footer-bottom button.footer-settings-link:hover{ color: var(--accent-light); text-decoration: underline; }
+
 /* ===== Legal pages prose ===== */
 .legal-content{ max-width: 820px; margin: 0 auto; }
 .legal-content h2{ margin-top: 44px; }

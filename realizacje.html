@@ -196,6 +196,7 @@
       <span>© <span id="year">2026</span> Aurelis Development Sp. z o.o. Wszelkie prawa zastrzeżone.</span>
       <a href="regulamin.html">Regulamin</a>
       <a href="polityka-prywatnosci.html">Polityka prywatności</a>
+      <button type="button" class="footer-settings-link" id="cookieSettingsLink">Ustawienia cookies</button>
       <a href="https://www.facebook.com/profile.php?id=61591915780293" target="_blank" rel="noopener" class="footer-credit-link">Projekt i wykonanie: <span class="shine-text">VERO STUDIO</span></a>
     </div>
   </div>
@@ -205,11 +206,41 @@
   <div class="cookie-banner-inner">
     <p>Ta strona wykorzystuje pliki cookie, aby zapewnić jej prawidłowe działanie oraz - po Twojej zgodzie - do celów statystycznych. Więcej informacji znajdziesz w <a href="polityka-prywatnosci.html#cookies">Polityce prywatności</a>.</p>
     <div class="cookie-banner-actions">
+      <button type="button" class="btn btn--outline btn--sm" id="cookieCustomizeBtn">Dostosuj</button>
       <button type="button" class="btn btn--outline btn--sm" id="cookieRejectBtn">Tylko niezbędne</button>
       <button type="button" class="btn btn--accent btn--sm" id="cookieAcceptBtn">Akceptuj wszystkie</button>
     </div>
   </div>
 </div>
+
+<dialog class="cookie-modal" id="cookieModal" aria-labelledby="cookieModalTitle">
+  <div class="cookie-modal-inner">
+    <h2 id="cookieModalTitle">Ustawienia plików cookie</h2>
+    <p>Wybierz, które pliki cookie chcesz zaakceptować. Więcej informacji znajdziesz w <a href="polityka-prywatnosci.html#cookies">Polityce prywatności</a>.</p>
+
+    <div class="cookie-option">
+      <div class="cookie-option-head">
+        <span>Cookies niezbędne</span>
+        <input type="checkbox" checked disabled aria-label="Cookies niezbędne (zawsze aktywne)">
+      </div>
+      <p>Niezbędne do prawidłowego działania strony. Nie można ich wyłączyć.</p>
+    </div>
+
+    <div class="cookie-option">
+      <div class="cookie-option-head">
+        <label for="cookieAnalytics">Cookies analityczne / statystyczne</label>
+        <input type="checkbox" id="cookieAnalytics">
+      </div>
+      <p>Pomagają nam zrozumieć, jak odwiedzający korzystają ze strony (np. Google Analytics).</p>
+    </div>
+
+    <div class="cookie-modal-actions">
+      <button type="button" class="btn btn--outline btn--sm" id="cookieModalCloseBtn">Anuluj</button>
+      <button type="button" class="btn btn--outline btn--sm" id="cookieAcceptAllModalBtn">Akceptuj wszystkie</button>
+      <button type="button" class="btn btn--accent btn--sm" id="cookieSaveBtn">Zapisz wybór</button>
+    </div>
+  </div>
+</dialog>
 
 <script src="script.js"></script>
 </body>
